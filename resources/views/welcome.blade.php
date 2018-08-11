@@ -24,9 +24,8 @@
     	<div  align="center" class="form_data">
        		<div class="col-md-2 col-xs-2"></div>
         	<div class="col-md-8 col-xs-6">
-
-				  <div class="card card-warning  card-outline">
-				  <div class="card-header" >	
+				<div class="card card-warning  card-outline">
+				<div class="card-header" >	
 				  <ul class="nav nav-tabs card-header-tabs pull-xs-left">
 				      <li class="nav-item col-xs-12">
 				        <a class="nav-link active"><h4 class="animated lightSpeedIn box-title card-title" align="left"><b>{{ $head_form[0]->Setting_detail }}</b></h4></a>
@@ -44,6 +43,7 @@
                   </div>				  
 				  </div>
 				  	  <form action="{{ url('/Save_Data') }}" method="POST" accept-charset="utf-8">
+				  	  <input type="hidden" name="encode" value="{{ $encode }}">
 				  	  @csrf
 					  <div class="card-body">
 					  	@foreach ($cardhead as $card)

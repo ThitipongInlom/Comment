@@ -21,5 +21,6 @@ return [
     'lastname' => 'Last Name',
     'telephone' => 'Telephone',
     'email' => 'Email address',
+    'notfound' => 'The page was not found.',
 
 ];
