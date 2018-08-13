@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB as DB;
@@ -95,102 +96,125 @@ class Controller extends BaseController
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio11'  => $_POST['radio11']]);
-        }elseif (isset($_POST['radio12'])) {
+        }
+        if (isset($_POST['radio12'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio12'  => $_POST['radio12']]);
-        }elseif (isset($_POST['radio13'])) {
+        }
+        if (isset($_POST['radio13'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio13'  => $_POST['radio13']]);
-        }elseif (isset($_POST['radio21'])) {
+        }
+        if (isset($_POST['radio21'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio21'  => $_POST['radio21']]);
-        }elseif (isset($_POST['radio22'])) {
+        }
+        if (isset($_POST['radio22'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio22'  => $_POST['radio22']]);
-        }elseif (isset($_POST['radio23'])) {
+        }
+        if (isset($_POST['radio23'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio23'  => $_POST['radio23']]);
-        }elseif (isset($_POST['radio24'])) {
+        }
+        if (isset($_POST['radio24'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio24'  => $_POST['radio24']]);
-        }elseif (isset($_POST['radio31'])) {
+        }
+        if (isset($_POST['radio31'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio31'  => $_POST['radio31']]);
-        }elseif (isset($_POST['radio310'])) {
+        }
+        if (isset($_POST['radio310'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio310'  => $_POST['radio310']]);
-        }elseif (isset($_POST['radio311'])) {
+        }
+        if (isset($_POST['radio311'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio311'  => $_POST['radio311']]);
-        }elseif (isset($_POST['radio312'])) {
+        }
+        if (isset($_POST['radio312'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio312'  => $_POST['radio312']]);
-        }elseif (isset($_POST['radio32'])) {
+        }
+        if (isset($_POST['radio32'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio32'  => $_POST['radio32']]);
-        }elseif (isset($_POST['radio33'])) {
+        }
+        if (isset($_POST['radio33'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio33'  => $_POST['radio33']]);
-        }elseif (isset($_POST['radio34'])) {
+        }
+        if (isset($_POST['radio34'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio34'  => $_POST['radio34']]);
-        }elseif (isset($_POST['radio35'])) {
+        }
+        if (isset($_POST['radio35'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio35'  => $_POST['radio35']]);
-        }elseif (isset($_POST['radio36'])) {
+        }
+        if (isset($_POST['radio36'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio36'  => $_POST['radio36']]);
-        }elseif (isset($_POST['radio37'])) {
+        }
+        if (isset($_POST['radio37'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio37'  => $_POST['radio37']]);
-        }elseif (isset($_POST['radio38'])) {
+        }
+        if (isset($_POST['radio38'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio38'  => $_POST['radio38']]);
-        }elseif (isset($_POST['radio39'])) {
+        }
+        if (isset($_POST['radio39'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio39'  => $_POST['radio39']]);
-        }elseif (isset($_POST['radio41'])) {
+        }
+        if (isset($_POST['radio41'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio41'  => $_POST['radio41']]);
-        }elseif (isset($_POST['radio42'])) {
+        }
+        if (isset($_POST['radio42'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio42'  => $_POST['radio42']]);
-        }elseif (isset($_POST['radio51'])) {
+        }
+        if (isset($_POST['radio51'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio51'  => $_POST['radio51']]);
-        }elseif (isset($_POST['radio52'])) {
+        }
+        if (isset($_POST['radio52'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio52'  => $_POST['radio52']]);
-        }elseif (isset($_POST['radio53'])) {
+        }
+        if (isset($_POST['radio53'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio53'  => $_POST['radio53']]);
         }
 
         // Go Page New Error
-
+        return Redirect::to('admin');
 
     }
 

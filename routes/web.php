@@ -16,7 +16,10 @@ Route::get('/{locale}/{encode}', 'Controller@Show_welcome_encode');
 // Save Data
 Route::post('/Save_Data', 'Controller@Save_Data');
 // Main Admin Page
-Route::get('/admin', function () {
+Route::get('/Admin', function () {
     return view('admin');
 });
-
+// Do_login 
+Route::post('/Do_login', 'Login@Do_login');
+// Dashboard
+Route::get('/Dashboard', 'Login@Dashboard');

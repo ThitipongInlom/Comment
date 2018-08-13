@@ -18,31 +18,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">		
 </head>
 <body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <b>Comment /</b> Callback
-  </div>
-  <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
-      <form action="{{ url('/Do_login') }}" method="post" accept-charset="utf-8">
-        @csrf
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" name="username" placeholder="Username" autofocus required>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" name="password" placeholder="Password" required>
-        </div>
-        <div class="row">
-          <div class="col-12" align="center">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+  123
 </body>
 	<!-- All Js -->
 	<script type="text/javascript" src="{{ url('js/app.js') }}"></script>

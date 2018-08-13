@@ -62,13 +62,13 @@
 			                		<td align="right" valign="baseline"><h4>{{ __('form.yes') }}</h4></td>
 			                		<td align="right">
 						                <div class="icheck-primary icheck-inline">
-						                	<input type="radio" id="radio{{ $body->id.$body->head_id.$body->head_id }}" name="radio{{ $body->head_id.$body->sup_num }}" value="Yes">
+						                	<input type="radio" class="radiocheck" id="radio{{ $body->id.$body->head_id.$body->head_id }}" name="radio{{ $body->head_id.$body->sup_num }}" value="Yes" required>
 						                	<label for="radio{{ $body->id.$body->head_id.$body->head_id }}"></label>
 						                </div>			                			
 			                		</td>
 			                		<td>
 						                <div class="icheck-primary icheck-inline">
-						                	<input type="radio" id="radio{{ $body->id.$body->head_id.$body->head_id+1 }}" name="radio{{ $body->head_id.$body->sup_num }}" value="No">
+						                	<input type="radio" class="radiocheck" id="radio{{ $body->id.$body->head_id.$body->head_id+1 }}" name="radio{{ $body->head_id.$body->sup_num }}" value="No" required>
 						                	<label for="radio{{ $body->id.$body->head_id.$body->head_id+1 }}"></label>
 						                </div>			                			
 			                		</td>
@@ -98,21 +98,21 @@
 						<div class="form-group row">
 						  <label for="firstname" class="col-sm-2 col-form-label">{{ __('form.firstname') }} :</label>
 						  <div class="col-sm-4">
-						    <input type="text" class="form-control" id="firstname" placeholder="{{ __('form.firstname') }}" name="firstname">
+						    <input type="text" class="form-control" id="firstname" placeholder="{{ __('form.firstname') }}" name="firstname"  required>
 						  </div>
 						  <label for="lastname" class="col-sm-2 col-form-label">{{ __('form.lastname') }} :</label>
 						  <div class="col-sm-4">
-						    <input type="text" class="form-control" id="lastname" placeholder="{{ __('form.lastname') }}" name="lastname">
+						    <input type="text" class="form-control" id="lastname" placeholder="{{ __('form.lastname') }}" name="lastname" required>
 						  </div>						    
 						</div>
 						<div class="form-group row">
 						  <label for="telephone" class="col-sm-2 col-form-label">{{ __('form.telephone') }} :</label>
 						  <div class="col-sm-4">
-						    <input type="text" class="form-control" id="telephone" placeholder="{{ __('form.telephone') }}" name="telephone">
+						    <input type="text" class="form-control" id="telephone" placeholder="{{ __('form.telephone') }}" name="telephone" required>
 						  </div>
 						  <label for="email" class="col-sm-2 col-form-label">{{ __('form.email') }} :</label>
 						  <div class="col-sm-4">
-						    <input type="text" class="form-control" id="email" placeholder="{{ __('form.email') }}" name="email">
+						    <input type="text" class="form-control" id="email" placeholder="{{ __('form.email') }}" name="email" required >
 						  </div>						    
 						</div>						
 					  	<br>						
@@ -137,6 +137,18 @@
     		}
     		window.location.href = urlsend;
     	}
+		var elements = document.getElementsByClassName("radiocheck");
+		for (var i = 0; i < elements.length; i++) {
+		    elements[i].oninvalid = function(e) {
+		        e.target.setCustomValidity("");
+		        if (!e.target.validity.valid) {
+		            e.target.setCustomValidity("{{ __('form.requiredradio') }}");
+		        }
+		    };
+		    elements[i].oninput = function(e) {
+		        e.target.setCustomValidity("");
+		    };
+		}   	
     </script>
     <!-- All Js -->
     <script type="text/javascript" src="{{ url('js/app.js') }}"></script>
