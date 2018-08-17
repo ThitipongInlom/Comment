@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2018 at 11:39 AM
+-- Generation Time: Aug 17, 2018 at 11:49 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -92,16 +92,11 @@ CREATE TABLE `comment_detail` (
 --
 
 INSERT INTO `comment_detail` (`comment_id`, `encode`, `token_save`, `radio11`, `comment11`, `radio12`, `comment12`, `radio13`, `comment13`, `radio21`, `comment21`, `radio22`, `comment22`, `radio23`, `comment23`, `radio24`, `comment24`, `radio31`, `comment31`, `radio310`, `comment310`, `radio311`, `comment311`, `radio312`, `comment312`, `radio32`, `comment32`, `radio33`, `comment33`, `radio34`, `comment34`, `radio35`, `comment35`, `radio36`, `comment36`, `radio37`, `comment37`, `radio38`, `comment38`, `radio39`, `comment39`, `radio41`, `comment41`, `radio42`, `comment42`, `radio51`, `comment51`, `radio52`, `comment52`, `radio53`, `comment53`, `firstname`, `lastname`, `telephone`, `email`, `Today`) VALUES
-(1, '4250GAAA', 'XawsypiwKMFzIZr9R41TEtuG4luJE5j3asDQqras', 'Yes', '1', NULL, '2', NULL, '3', NULL, '4', NULL, '5', NULL, '6', NULL, '7', NULL, '8', NULL, '9', NULL, '10', NULL, '11', NULL, '12', NULL, '13', NULL, '14', NULL, '15', NULL, '16', NULL, '17', NULL, '18', NULL, '19', NULL, '20', NULL, '21', NULL, '22', NULL, '23', NULL, '24', 'ฐิติพงษ์', 'อินลม', '0864633160', 'ingnice007@gmail.com', '2018-08-11 11:49:38'),
-(2, '4250GAAA', 'XawsypiwKMFzIZr9R41TEtuG4luJE5j3asDQqras', 'Yes', '1', NULL, '2', NULL, '3', NULL, '4', NULL, '5', NULL, '6', NULL, '7', NULL, '8', NULL, '9', NULL, '10', NULL, '11', NULL, '12', NULL, '13', NULL, '14', NULL, '15', NULL, '16', NULL, '17', NULL, '18', NULL, '19', NULL, '20', NULL, '21', NULL, '22', NULL, '23', NULL, '24', 'ฐิติพงษ์', 'อินลม', '0864633160', 'ingnice007@gmail.com', '2018-08-11 11:55:20'),
-(3, '4250GAAA', 'XawsypiwKMFzIZr9R41TEtuG4luJE5j3asDQqras', 'Yes', '1', NULL, '2', NULL, '3', NULL, '4', NULL, '5', NULL, '6', NULL, '7', NULL, '8', NULL, '9', NULL, '10', NULL, '11', NULL, '12', NULL, '13', NULL, '14', NULL, '15', NULL, '16', NULL, '17', NULL, '18', NULL, '19', NULL, '20', NULL, '21', NULL, '22', NULL, '23', NULL, '24', 'ฐิติพงษ์', 'อินลม', '0864633160', 'ingnice007@gmail.com', '2018-08-11 11:57:01'),
-(4, '4250GAAA', 'XawsypiwKMFzIZr9R41TEtuG4luJE5j3asDQqras', 'Yes', '1', NULL, '2', NULL, '3', NULL, '4', NULL, '5', NULL, '6', NULL, '7', NULL, '8', NULL, '9', NULL, '10', NULL, '11', NULL, '12', NULL, '13', NULL, '14', NULL, '15', NULL, '16', NULL, '17', NULL, '18', NULL, '19', NULL, '20', NULL, '21', NULL, '22', NULL, '23', NULL, '24', 'ฐิติพงษ์', 'อินลม', '0864633160', 'ingnice007@gmail.com', '2018-08-11 11:58:14'),
-(5, '4250GAAA', 'XawsypiwKMFzIZr9R41TEtuG4luJE5j3asDQqras', 'Yes', '1', NULL, '2', NULL, '3', NULL, '4', NULL, '5', NULL, '6', NULL, '7', NULL, '8', NULL, '9', NULL, '10', NULL, '11', NULL, '12', NULL, '13', NULL, '14', NULL, '15', NULL, '16', NULL, '17', NULL, '18', NULL, '19', NULL, '20', NULL, '21', NULL, '22', NULL, '23', NULL, '24', 'ฐิติพงษ์', 'อินลม', '0864633160', 'ingnice007@gmail.com', '2018-08-11 12:05:11'),
-(6, '4250GAAA', 'XawsypiwKMFzIZr9R41TEtuG4luJE5j3asDQqras', 'Yes', '1', NULL, '2', NULL, '3', NULL, '4', NULL, '5', NULL, '6', NULL, '7', NULL, '8', NULL, '9', NULL, '10', NULL, '11', NULL, '12', NULL, '13', NULL, '14', NULL, '15', NULL, '16', NULL, '17', NULL, '18', NULL, '19', NULL, '20', NULL, '21', NULL, '22', NULL, '23', NULL, '24', 'ฐิติพงษ์', 'อินลม', '0864633160', 'ingnice007@gmail.com', '2018-08-11 12:06:11'),
-(7, '4250GAAA', 'XawsypiwKMFzIZr9R41TEtuG4luJE5j3asDQqras', 'Yes', '1', NULL, '2', NULL, '3', NULL, '4', NULL, '5', NULL, '6', NULL, '7', NULL, '8', NULL, '9', NULL, '10', NULL, '11', NULL, '12', NULL, '13', NULL, '14', NULL, '15', NULL, '16', NULL, '17', NULL, '18', NULL, '19', NULL, '20', NULL, '21', NULL, '22', NULL, '23', NULL, '24', 'ฐิติพงษ์', 'อินลม', '0864633160', 'ingnice007@gmail.com', '2018-08-11 12:06:35'),
-(8, '4250GAAA', 'XawsypiwKMFzIZr9R41TEtuG4luJE5j3asDQqras', 'No', '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', '', '', '', '', '2018-08-11 12:07:16'),
-(9, '4250GAAA', 'XawsypiwKMFzIZr9R41TEtuG4luJE5j3asDQqras', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', '', '', '', '', '2018-08-11 12:11:28'),
-(10, '4250GAAA', 'XawsypiwKMFzIZr9R41TEtuG4luJE5j3asDQqras', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', NULL, '', '', '', '', '', '2018-08-11 12:12:02');
+(1, '4250GAAA', 'DbCctmoaHqIaVW8OheoEZBDQx1fdtNG4Jbxfo27m', 'Yes', '', NULL, '', NULL, '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'v', 'v', '', '', '2018-08-13 11:35:01'),
+(2, '4250GAAA', 'DbCctmoaHqIaVW8OheoEZBDQx1fdtNG4Jbxfo27m', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'A', 'A', 'A', 'A', '2018-08-13 13:10:22'),
+(3, '4250GAAA', 'DbCctmoaHqIaVW8OheoEZBDQx1fdtNG4Jbxfo27m', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'A', 'A', 'A', 'A', '2018-08-13 13:10:57'),
+(4, '4250GAAA', 'piXuDD6LzVCwZ56OieGuoZuMmcKADbaWYiY4nluh', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'a', 'a', 'a', 'a', '2018-08-16 10:53:51'),
+(5, '4250GAAA', 'piXuDD6LzVCwZ56OieGuoZuMmcKADbaWYiY4nluh', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'a', 'a', 'a', 'a', '2018-08-16 11:08:11');
 
 -- --------------------------------------------------------
 
@@ -116,6 +111,7 @@ CREATE TABLE `create_link` (
   `link_staying_from` date NOT NULL,
   `link_staying_to` date NOT NULL,
   `link_encode` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `link_gust_in` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `link_en` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `link_th` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -124,9 +120,9 @@ CREATE TABLE `create_link` (
 -- Dumping data for table `create_link`
 --
 
-INSERT INTO `create_link` (`link_id`, `link_create`, `link_group_name`, `link_staying_from`, `link_staying_to`, `link_encode`, `link_en`, `link_th`) VALUES
-(1, '2018-08-10', 'Nice', '2018-08-09', '2018-08-10', '4250GAAA', 'http://172.16.1.50/Comment/en/4250GAAA', 'http://172.16.1.50/Comment/th/4250GAAA'),
-(2, '2018-08-10', 'Thitipong Inlom', '2018-08-10', '2018-08-11', 'Thitipong_Inlom', '', '');
+INSERT INTO `create_link` (`link_id`, `link_create`, `link_group_name`, `link_staying_from`, `link_staying_to`, `link_encode`, `link_gust_in`, `link_en`, `link_th`) VALUES
+(1, '2018-08-10', 'Nice', '2018-08-09', '2018-08-10', '4250GAAA', '200', 'http://172.16.1.50/Comment/en/4250GAAA', 'http://172.16.1.50/Comment/th/4250GAAA'),
+(2, '2018-08-10', 'Thitipong Inlom', '2018-08-10', '2018-08-11', 'Thitipong_Inlom', '300', '', '');
 
 -- --------------------------------------------------------
 
@@ -156,18 +152,6 @@ INSERT INTO `head_query` (`id`, `head_id_sub`, `lang`, `detail`) VALUES
 (8, '4', 'th', 'ห้องพัก'),
 (9, '5', 'en', 'The Departure'),
 (10, '5', 'th', 'ขาออก');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -272,11 +256,20 @@ CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Thitipong Inlom', 'ingnice007@gmail.com', 'nice', '$2y$10$V8OnXIkxvtKvIXGHPq9hIep0uWCURTQAMxa.urGSDFtpr.YqkMIBy', '0', 'THFw1fsivOOOWDh39Yxgt22dppK6iZEtaIHrUpkCueSjwyxGBwfr2J2KwgbS', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -298,12 +291,6 @@ ALTER TABLE `create_link`
 -- Indexes for table `head_query`
 --
 ALTER TABLE `head_query`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `migrations`
---
-ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -332,7 +319,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comment_detail`
 --
 ALTER TABLE `comment_detail`
-  MODIFY `comment_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `comment_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `create_link`
@@ -345,12 +332,6 @@ ALTER TABLE `create_link`
 --
 ALTER TABLE `head_query`
   MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `setting`
@@ -368,7 +349,7 @@ ALTER TABLE `sup_query`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
