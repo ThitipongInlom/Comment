@@ -1,0 +1,1 @@
+{{ var_dump(Session::get('Login.Name')) }}

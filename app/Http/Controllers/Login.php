@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Contracts\Auth\Guard;
 
+
 class Login extends Controller
 {
     public function Do_login()
@@ -19,22 +20,34 @@ class Login extends Controller
     	$username = Input::post('username');
     	$password = Input::post('password');
 		if (Auth::attempt(['username' => $username, 'password' => $password])) {
-
-		        echo "success with username!";
+				$data = ['Name' => 'Nice', 'Pass' => 'Nice', 'Login' => 'Username'];
+				Session::put('Login', $data);
+		        return redirect('Dashboard');
 		}
 		elseif (Auth::attempt(['email'=> $username, 'password' => $password])) {
-
-		        echo "success with email!"; 
+				$data = ['Name' => 'Nice', 'Pass' => 'Nice', 'Login' => 'E-Mail'];
+				Session::put('Login', $data);
+		        return redirect('Dashboard');
 		} 
 		else {
-		        echo "fail!";
-
+				return back()->withInput();
 		}
-		
     }
 
     public function Dashboard()
     {
     	return view('dashboard');
+    }
+
+    public function Star()
+    {
+    	return view('star');
+    }
+
+    public function Logout()
+    {
+        Auth::logout();
+        Session::flush();
+        return redirect('Admin');
     }
 }

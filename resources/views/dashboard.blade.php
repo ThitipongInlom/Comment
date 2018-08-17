@@ -18,7 +18,38 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">		
 </head>
 <body class="hold-transition login-page">
-  123
+    @include('layout.head')
+    <br>
+    <div class="container">
+    <div class="row">
+    <div class="col-md-6">
+    <div class="card text-center">
+      <div class="card-header">
+        Featured
+      </div>
+      <div class="card-body">
+        GO
+      </div>
+      <div class="card-footer text-muted">
+        2 days ago
+      </div>
+    </div>
+    </div>
+    <div class="col-md-6">
+    <div class="card text-center">
+      <div class="card-header">
+        Featured
+      </div>
+      <div class="card-body">
+        GO
+      </div>
+      <div class="card-footer text-muted">
+        2 days ago
+      </div>
+    </div>
+    </div>    
+    </div>
+    </div>
 </body>
 	<!-- All Js -->
 	<script type="text/javascript" src="{{ url('js/app.js') }}"></script>

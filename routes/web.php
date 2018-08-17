@@ -23,3 +23,7 @@ Route::get('/Admin', function () {
 Route::post('/Do_login', 'Login@Do_login');
 // Dashboard
 Route::get('/Dashboard', 'Login@Dashboard');
+// Star Program
+Route::get('/Star', 'Login@Star');
+// Logout
+Route::get('/Logout', 'Login@Logout');

@@ -214,7 +214,7 @@ class Controller extends BaseController
         }
 
         // Go Page New Error
-        return Redirect::to('admin');
+        return redirect('Star');
 
     }
 
