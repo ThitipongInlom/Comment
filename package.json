@@ -23,8 +23,24 @@
         "admin-lte": "^3.0.0-alpha.2",
         "admin-lte-sass": "^2.3.2",
         "animate.css": "^3.7.0",
+        "datatables": "^1.10.18",
+        "datatables.net-autofill-bs4": "^2.3.1",
+        "datatables.net-bs4": "^1.10.19",
+        "datatables.net-buttons-bs4": "^1.5.3",
+        "datatables.net-colreorder-bs4": "^1.5.1",
+        "datatables.net-editor-bs4": "^1.6.3",
+        "datatables.net-fixedcolumns-bs4": "^3.2.6",
+        "datatables.net-fixedheader-bs4": "^3.1.5",
+        "datatables.net-keytable-bs4": "^2.4.1",
+        "datatables.net-responsive-bs4": "^2.2.3",
+        "datatables.net-rowgroup-bs4": "^1.0.4",
+        "datatables.net-rowreorder-bs4": "^1.2.5",
+        "datatables.net-scroller-bs4": "^1.5.1",
+        "datatables.net-select-bs4": "^1.2.7",
         "font-awesome": "^4.7.0",
         "icheck-2": "^2.0.0",
-        "icheck-bootstrap": "^3.0.1"
+        "icheck-bootstrap": "^3.0.1",
+        "jszip": "^3.1.5",
+        "pdfmake": "^0.1.37"
     }
 }

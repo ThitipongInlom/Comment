@@ -23,32 +23,38 @@
     <div class="container">
     <div class="row">
     <div class="col-md-6">
-    <div class="card text-center">
-      <div class="card-header">
-        Featured
+    <div class="card">
+      <div class="card-header text-center">
+        รายการลิ้งค์
       </div>
       <div class="card-body">
         GO
-      </div>
-      <div class="card-footer text-muted">
-        2 days ago
       </div>
     </div>
     </div>
     <div class="col-md-6">
     <div class="card text-center">
       <div class="card-header">
-        Featured
+        ล่าสุด
       </div>
       <div class="card-body">
         GO
       </div>
-      <div class="card-footer text-muted">
-        2 days ago
-      </div>
     </div>
     </div>    
     </div>
+    <div class="row">
+    <div class="col-md-12">
+    <div class="card">
+      <div class="card-header text-center">
+        ลิ้งค์รวม
+      </div>
+      <div class="card-body">
+        GO
+      </div>
+    </div>
+    </div>   
+    </div>   
     </div>
 </body>
 	<!-- All Js -->
