@@ -36,7 +36,10 @@ class Login extends Controller
 
     public function Dashboard()
     {
-    	return view('dashboard');
+        $create_link = DB::select("select * from create_link");
+    	return view('dashboard',[
+            'create_link' => $create_link,
+            ]);
     }
 
     public function Star()
