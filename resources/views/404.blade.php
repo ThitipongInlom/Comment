@@ -26,7 +26,7 @@
                        <br>
                        <h4>{{ __('form.notfound') }}</h4>
                        <hr>
-                       <h1>404 Page.</h1>
+                       
                    </div>
                 </div>
                 <div class="col-md-4"></div>
