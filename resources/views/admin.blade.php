@@ -18,6 +18,10 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">		
 </head>
 <body class="hold-transition login-page">
+@if (Session::has('Login'))
+<script>window.location = "{{ url('/Dashboard') }}";</script>
+@else
+@endif  
 <div class="login-box">
   <div class="login-logo">
     <b>Comment /</b> Callback

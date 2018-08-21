@@ -13,13 +13,13 @@
                   <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item active">
-                        <a class="nav-link" href="#Home">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ url('/Create_Link') }}">Create Link <span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#Features">Features</a>
+                        <a class="nav-link" href="#Features">View information</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#Pricing">Pricing</a>
+                        <a class="nav-link" href="#Pricing">Conclude</a>
                       </li>
                     </ul>                
                     <a href="{{ url('/Logout') }}">

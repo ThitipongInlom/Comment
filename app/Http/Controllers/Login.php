@@ -42,6 +42,11 @@ class Login extends Controller
             ]);
     }
 
+    public function Create_Link()
+    {
+        return view('create_link');
+    }
+
     public function Star()
     {
     	return view('star');

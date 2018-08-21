@@ -27,3 +27,5 @@ Route::get('/Dashboard', 'Login@Dashboard');
 Route::get('/Star', 'Login@Star');
 // Logout
 Route::get('/Logout', 'Login@Logout');
+// Create Link
+Route::get('/Create_Link', 'Login@Create_Link');

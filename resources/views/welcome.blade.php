@@ -46,6 +46,14 @@
 				  	  <input type="hidden" name="encode" value="{{ $encode }}">
 				  	  @csrf
 					  <div class="card-body">
+						<div class="form-group row">
+					    <div class="col-md-12" align="center">
+					    <label class="col-form-label"><h5><b>Group:</b> {{ $grop[0]->link_group_name }}</h5></label>
+					    <br>
+					    <label class="col-form-label"><h5><b>From:</b> {{ date('d-m-Y', strtotime($grop[0]->link_staying_from)) }} | <b>To:</b> {{ date('d-m-Y', strtotime($grop[0]->link_staying_to)) }}</h5></label>
+					    </div>												
+						</div>
+											  	
 					  	@foreach ($cardhead as $card)
 					  	<!-- Start Card FQA -->
 						<div class="card card-outline">
@@ -88,13 +96,6 @@
 						<hr>
 						<h5>{{ $foot_form[0]->Setting_detail }}</h5>
 						<hr>
-						<div class="form-group row">
-					    <div class="col-md-12" align="center">
-					    <label class="col-form-label"><h5><b>Group:</b> {{ $grop[0]->link_group_name }}</h5></label>
-					    <br>
-					    <label class="col-form-label"><h5><b>From:</b> {{ date('d-m-Y', strtotime($grop[0]->link_staying_from)) }} | <b>To:</b> {{ date('d-m-Y', strtotime($grop[0]->link_staying_to)) }}</h5></label>
-					    </div>												
-						</div>
 						<div class="form-group row">
 						  <label for="firstname" class="col-sm-2 col-form-label">{{ __('form.firstname') }} :</label>
 						  <div class="col-sm-4">

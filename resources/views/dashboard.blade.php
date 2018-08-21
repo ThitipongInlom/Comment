@@ -15,7 +15,7 @@
         <!-- Icheck-2 -->
         <link rel="stylesheet" type="text/css" href="{{ url('node_modules/icheck-bootstrap/icheck-bootstrap.css') }}">
         <!-- Data Table -->
-        <link rel="stylesheet" type="text/css" href="{{ url('plugins/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url('plugins/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.css') }}"> 
         <link rel="stylesheet" type="text/css" href="{{ url('plugins/datatables/Responsive-2.2.2/css/responsive.bootstrap4.css') }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">		
@@ -69,8 +69,8 @@
                 <td>{{ $link->link_group_name }}</td>
                 <td>{{ $link->link_gust_in }}</td>
                 <td>{{ date('d-m-Y', strtotime($link->link_staying_from)) }}</td>
-                <td>{{ $link->link_th }}</td>
-                <td>{{ $link->link_en }}</td>
+                <td>{{  url('')  }}{{ $link->link_th }}</td>
+                <td>{{  url('')  }}{{ $link->link_en }}</td>
             </tr>
             @endforeach 
         </tbody>
@@ -125,7 +125,7 @@
     { "targets": 4 },
     { "orderable": "false"}
     ],  
-    "order":[[2,'asc']],      
+    "order":[[2,'desc']],     
     });
   } );
   </script>
