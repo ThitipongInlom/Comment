@@ -55,7 +55,7 @@
       <div class="card-body">
     <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
-            <tr>
+            <tr class="bg-primary">
                 <th>Grop Name</th>
                 <th>จำนวน</th>
                 <th>วันที่เข้าพัก</th>
@@ -75,7 +75,7 @@
             @endforeach 
         </tbody>
         <tfoot>
-            <tr>
+            <tr class="bg-primary">
                 <th>Grop Name</th>
                 <th>จำนวน</th>
                 <th>วันที่เข้าพัก</th>
