@@ -42,6 +42,15 @@ class Controller extends BaseController
         }
     }       
 
+    public function View_Information()
+    {
+        return view('view_information'); 
+    }
+    public function Getdata()
+    {
+     return datatables()->of(DB::table('create_link'))->toJson();
+    }
+
     public function Save_Data()
     {
         date_default_timezone_set("Asia/Bangkok");

@@ -29,3 +29,9 @@ Route::get('/Star', 'Login@Star');
 Route::get('/Logout', 'Login@Logout');
 // Create Link
 Route::get('/Create_Link', 'Login@Create_Link');
+// Process Create Link
+Route::post('/Do_create_link', 'Login@Do_create_link');
+// View_Information
+Route::get('/View_Information', 'Controller@View_Information');
+// Get Data
+Route::get('/Getdata', 'Controller@Getdata');

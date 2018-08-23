@@ -20,7 +20,8 @@
         <!--  Date picker-->
         <link rel="stylesheet" type="text/css" href="{{ url('plugins/datepicker/css/bootstrap-datepicker.css') }}">
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">		
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">	
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">	
 </head>
 <body class="hold-transition login-page">
     @include('layout.head')
@@ -31,33 +32,20 @@
 
     <div class="card card-primary">
       <div class="card-header">
-          <h3 class="card-title text-center">Create Link</h3>
+        <h3 class="card-title text-center">View</h3>
       </div>
       <div class="card-body">
-        <div align="center">
-        <form action="{{ url('/Do_create_link') }}" method="post" accept-charset="utf-8">
-        @csrf
-          <div class="form-group">
-            <label for="groupname"><h4>Group Name</h4></label>
-            <input type="text" class="form-control col-4 input-sm" id="groupname" name="groupname" placeholder="Group Name">
-          </div>
-          <div class="form-group">
-            <label for="number_of_people"><h4>Number OF People</h4></label>
-            <input type="text" class="form-control col-4 input-sm" id="number_of_people" name="numberprople" placeholder="Number OF People">
-          </div>
-          <div class="form-group">
-            <label for="number_of_people"><h4>Stay From</h4></label>
-            <input type="text" class="form-control col-2 datepicker input-sm" id="number_of_people" name="stayin" placeholder="Stay From">
-          </div>  
-          <div class="form-group">
-            <label for="number_of_people"><h4>Stay To</h4></label>
-            <input type="text" class="form-control col-2 datepicker input-sm" id="number_of_people" name="stayto"  placeholder="Stay To">
-          </div>              
-          <button class="btn btn-outline-success">Create</button>    
-        </form>
-        </div>
+      <table id="TableData" class="table table-bordered table-sm" style="width:100%">
+          <thead>
+              <tr class="bg-primary">
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Action</th>
+              </tr>
+          </thead>
+      </table>
       </div>
-      </div>
+    </div>      
     </div>   
     </div>   
     </div>
@@ -72,9 +60,33 @@
   <script type="text/javascript" src="{{ url('public/plugins/datepicker/js/bootstrap-datepicker.js') }}"></script>
   <script type="text/javascript" src="{{ url('public/plugins/datepicker/locales/bootstrap-datepicker.th.min.js') }}"></script>
   <script type="text/javascript">
-    $('.datepicker').datepicker({
-      format: 'dd/mm/yyyy',
-      language: 'th'
-    });
-  </script>
+  $(document).ready(function() {
+       $('#TableData').DataTable({
+          "responsive": true,  
+          "processing": true,
+          "serverSide": true,
+          "aLengthMenu": [[ 5, 10, -1], [  5, 10, "ทั้งหมด"]],
+          "ajax": "{{ url('/Getdata') }}",
+          "columns":[
+              { "data": "link_group_name" },
+              { "data": "link_gust_in" },
+          ],
+          "language": {
+          "lengthMenu":"แสดง _MENU_ แถว",
+          "search":"ค้นหา:",
+          "info":"แสดง _START_ ถึง _END_ ทั้งหมด _TOTAL_ แถว",
+          "infoEmpty":"แสดง 0 ถึง 0 ทั้งหมด 0 แถว",
+          "infoFiltered":"(จาก ทั้งหมด _MAX_ ทั้งหมด แถว)",
+          "processing": "กำลังโหลดข้อมูล...",
+          "zeroRecords": "ไม่มีข้อมูล",
+          "paginate": {
+          "first": "หน้าแรก",
+          "last": "หน้าสุดท้าย",
+          "next": "ต่อไป",
+          "previous": "ย้อนกลับ"
+          },
+          },
+       });
+  });
+  </script>  
 </html>

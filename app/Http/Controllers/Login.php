@@ -47,6 +47,32 @@ class Login extends Controller
         return view('create_link');
     }
 
+    public function Do_create_link()
+    {
+        $groupname = Input::post('groupname');
+        $numberprople = Input::post('numberprople');
+        $stayin = Input::post('stayin');
+        $restayin = str_replace('/', '-', $stayin);
+        $resultstayin  = date('Y-m-d', strtotime($restayin));
+        $stayto = Input::post('stayto');
+        $restayto = str_replace('/', '-', $stayto);
+        $resultstayto  = date('Y-m-d', strtotime($restayto));
+        $today = date("Y-m-d");
+        DB::table('create_link')->insert(
+            [
+            'link_create' => $today, 
+            'link_group_name' => $groupname,
+            'link_gust_in' => $numberprople,
+            'link_staying_from' => $resultstayin,
+            'link_staying_to' => $resultstayto,
+            'link_encode' => $groupname,
+            'link_en' => '/en'.'/'.$groupname,
+            'link_th' => '/th'.'/'.$groupname
+        ]
+        );  
+        return redirect('Dashboard');      
+    }
+
     public function Star()
     {
     	return view('star');
