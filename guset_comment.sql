@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2018 at 09:24 AM
+-- Generation Time: Aug 24, 2018 at 11:58 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `comment_detail` (
   `comment_id` int(8) NOT NULL,
   `encode` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `num_save` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `token_save` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `radio11` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `comment11` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -91,12 +92,11 @@ CREATE TABLE `comment_detail` (
 -- Dumping data for table `comment_detail`
 --
 
-INSERT INTO `comment_detail` (`comment_id`, `encode`, `token_save`, `radio11`, `comment11`, `radio12`, `comment12`, `radio13`, `comment13`, `radio21`, `comment21`, `radio22`, `comment22`, `radio23`, `comment23`, `radio24`, `comment24`, `radio31`, `comment31`, `radio310`, `comment310`, `radio311`, `comment311`, `radio312`, `comment312`, `radio32`, `comment32`, `radio33`, `comment33`, `radio34`, `comment34`, `radio35`, `comment35`, `radio36`, `comment36`, `radio37`, `comment37`, `radio38`, `comment38`, `radio39`, `comment39`, `radio41`, `comment41`, `radio42`, `comment42`, `radio51`, `comment51`, `radio52`, `comment52`, `radio53`, `comment53`, `firstname`, `lastname`, `telephone`, `email`, `Today`) VALUES
-(1, '4250GAAA', 'DbCctmoaHqIaVW8OheoEZBDQx1fdtNG4Jbxfo27m', 'Yes', '', NULL, '', NULL, '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'v', 'v', '', '', '2018-08-13 11:35:01'),
-(2, '4250GAAA', 'DbCctmoaHqIaVW8OheoEZBDQx1fdtNG4Jbxfo27m', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'A', 'A', 'A', 'A', '2018-08-13 13:10:22'),
-(3, '4250GAAA', 'DbCctmoaHqIaVW8OheoEZBDQx1fdtNG4Jbxfo27m', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'A', 'A', 'A', 'A', '2018-08-13 13:10:57'),
-(4, '4250GAAA', 'piXuDD6LzVCwZ56OieGuoZuMmcKADbaWYiY4nluh', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'a', 'a', 'a', 'a', '2018-08-16 10:53:51'),
-(5, '4250GAAA', 'piXuDD6LzVCwZ56OieGuoZuMmcKADbaWYiY4nluh', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'a', 'a', 'a', 'a', '2018-08-16 11:08:11');
+INSERT INTO `comment_detail` (`comment_id`, `encode`, `num_save`, `token_save`, `radio11`, `comment11`, `radio12`, `comment12`, `radio13`, `comment13`, `radio21`, `comment21`, `radio22`, `comment22`, `radio23`, `comment23`, `radio24`, `comment24`, `radio31`, `comment31`, `radio310`, `comment310`, `radio311`, `comment311`, `radio312`, `comment312`, `radio32`, `comment32`, `radio33`, `comment33`, `radio34`, `comment34`, `radio35`, `comment35`, `radio36`, `comment36`, `radio37`, `comment37`, `radio38`, `comment38`, `radio39`, `comment39`, `radio41`, `comment41`, `radio42`, `comment42`, `radio51`, `comment51`, `radio52`, `comment52`, `radio53`, `comment53`, `firstname`, `lastname`, `telephone`, `email`, `Today`) VALUES
+(1, '4250GAAA', '1', 'J2BQvK5KF5aNTmBku2kFSaI90IU74D31RAqTg7IE', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Thitipong', 'Inlom', '0864633160', 'ingnice007@gmail.com', '2018-08-23 09:57:50'),
+(2, '4250GAAA', '2', 'xIKzJ3G1zvgWlerKKW9Cg2FPoxF5nMLKfrjTV3Do', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'test', 'test', '0864633160', 'ingnice007@gmail.com', '2018-08-24 13:08:05'),
+(3, '4250GAAA', '3', 'xIKzJ3G1zvgWlerKKW9Cg2FPoxF5nMLKfrjTV3Do', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Thitipong', 'Inliom', '0864633160', 'ingnice007@gmail.com', '2018-08-24 13:12:04'),
+(4, 'Thitipong_Inlom', '1', 'xIKzJ3G1zvgWlerKKW9Cg2FPoxF5nMLKfrjTV3Do', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'ฐิติพงษ์', 'อินลม', '+66852884978', 'ingnice009@hotmail.com', '2018-08-24 13:12:48');
 
 -- --------------------------------------------------------
 
@@ -121,8 +121,10 @@ CREATE TABLE `create_link` (
 --
 
 INSERT INTO `create_link` (`link_id`, `link_create`, `link_group_name`, `link_staying_from`, `link_staying_to`, `link_encode`, `link_gust_in`, `link_en`, `link_th`) VALUES
-(1, '2018-08-10', 'Nice', '2018-08-09', '2018-08-10', '4250GAAA', '200', 'http://172.16.1.50/Comment/en/4250GAAA', 'http://172.16.1.50/Comment/th/4250GAAA'),
-(2, '2018-08-10', 'Thitipong Inlom', '2018-08-10', '2018-08-11', 'Thitipong_Inlom', '300', '', '');
+(1, '2018-08-10', 'Nice', '2018-08-09', '2018-08-10', '4250GAAA', '200', '/en/4250GAAA', '/th/4250GAAA'),
+(2, '2018-08-10', 'Thitipong Inlom', '2018-08-10', '2018-08-11', 'Thitipong_Inlom', '300', '/en/Thitipong_Inlom', '/th/Thitipong_Inlom'),
+(3, '2018-08-23', 'test1', '2018-08-26', '2018-08-28', 'test1', '30', '/en/test1', '/th/test1'),
+(4, '2018-08-23', 'Thanachart', '2018-08-26', '2018-08-27', 'Thanachart', '50', '/en/Thanachart', '/th/Thanachart');
 
 -- --------------------------------------------------------
 
@@ -131,11 +133,11 @@ INSERT INTO `create_link` (`link_id`, `link_create`, `link_group_name`, `link_st
 --
 
 CREATE TABLE `head_query` (
-  `id` int(8) NOT NULL,
-  `head_id_sub` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `lang` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `detail` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` int(10) UNSIGNED NOT NULL,
+  `head_id_sub` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lang` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `detail` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `head_query`
@@ -147,7 +149,7 @@ INSERT INTO `head_query` (`id`, `head_id_sub`, `lang`, `detail`) VALUES
 (3, '2', 'en', 'Upon Arrival'),
 (4, '2', 'th', 'เมื่อเดินทางมาถึง'),
 (5, '3', 'en', 'The Function'),
-(6, '3', 'th', 'ฟังก์ชั่น\r\n'),
+(6, '3', 'th', 'ฟังก์ชั่น'),
 (7, '4', 'en', 'The Guest Rooms'),
 (8, '4', 'th', 'ห้องพัก'),
 (9, '5', 'en', 'The Departure'),
@@ -156,15 +158,36 @@ INSERT INTO `head_query` (`id`, `head_id_sub`, `lang`, `detail`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2018_08_18_074330_setting', 1),
+(2, '2018_08_18_075457_head_query', 1),
+(3, '2018_08_18_090327_users', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `setting`
 --
 
 CREATE TABLE `setting` (
-  `Setting_id` int(8) NOT NULL,
-  `Setting_head` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `Setting_land` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `Setting_detail` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `Setting_id` int(10) UNSIGNED NOT NULL,
+  `Setting_head` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Setting_land` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Setting_detail` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `setting`
@@ -175,7 +198,7 @@ INSERT INTO `setting` (`Setting_id`, `Setting_head`, `Setting_land`, `Setting_de
 (2, 'head_form', 'en', 'Organizer/Group Leader Questionnaire'),
 (3, 'title_web', 'th', 'โรงแรมเดอะ ซายน์'),
 (4, 'head_form', 'th', 'แบบสอบถามผู้นำองค์กร / กลุ่ม'),
-(5, 'foot_form', 'en', 'l\'d like to thank you on behalf of our Management for you feedback and cooperation which we\'ll use to improve our service'),
+(5, 'foot_form', 'en', 'l\'d like to thank you on behalf of our Management for you feedback and cooperation which we\'ll use to improve our'),
 (6, 'foot_form', 'th', 'ในนามของฝ่ายบริหารขอขอบพระคุณสำหรับแบบสอบถาม ทางโรงแรมจะนำไปปรับปรุงเพื่อบริการที่ดียิ่งขึ้น');
 
 -- --------------------------------------------------------
@@ -254,14 +277,14 @@ INSERT INTO `sup_query` (`id`, `head_id`, `lang`, `sup_num`, `query`) VALUES
 
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `remember_token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -269,7 +292,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Thitipong Inlom', 'ingnice007@gmail.com', 'nice', '$2y$10$V8OnXIkxvtKvIXGHPq9hIep0uWCURTQAMxa.urGSDFtpr.YqkMIBy', '0', 'Gx2WSNIRPCc805f390FlFgn26bvBWFlsCZWzbHF5jNaVyHEHoHZOlkDqjPG9', NULL, NULL);
+(1, 'Thitipong Inlom', 'ingnice007@gmail.com', 'nice', '$2y$10$V8OnXIkxvtKvIXGHPq9hIep0uWCURTQAMxa.urGSDFtpr.YqkMIBy', '0', '6YpXIbBihaywGOidC31Gj9aJZfqIDFJBiBq81pNeT4mnujcESkdtiOIKxclO', '2018-08-18 09:16:08', '2018-08-18 09:16:08');
 
 --
 -- Indexes for dumped tables
@@ -291,6 +314,12 @@ ALTER TABLE `create_link`
 -- Indexes for table `head_query`
 --
 ALTER TABLE `head_query`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -319,25 +348,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comment_detail`
 --
 ALTER TABLE `comment_detail`
-  MODIFY `comment_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `comment_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `create_link`
 --
 ALTER TABLE `create_link`
-  MODIFY `link_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `link_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `head_query`
 --
 ALTER TABLE `head_query`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `setting`
 --
 ALTER TABLE `setting`
-  MODIFY `Setting_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Setting_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `sup_query`
