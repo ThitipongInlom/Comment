@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="{{ url('plugins/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.css') }}"> 
         <link rel="stylesheet" type="text/css" href="{{ url('plugins/datatables/Responsive-2.2.2/css/responsive.bootstrap4.css') }}">
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">		
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">	
 </head>
 <body class="hold-transition login-page">
     @include('layout.head')
@@ -24,23 +24,23 @@
     <div class="container">
     <div class="row">
     <div class="col-md-6">
-    <div class="card text-center">
-      <div class="card-header">
-        รายการลิ้งค์
-      </div>
-      <div class="card-body">
-        GO
-      </div>
+    <div class="card card-primary text-center">
+    <div class="card-header">
+        <h3 class="card-title">ล่าสุด</h3>
+    </div>
+    <div class="card-body">
+    GO
+    </div>
     </div>
     </div>
     <div class="col-md-6">
-    <div class="card text-center">
-      <div class="card-header">
-        ล่าสุด
-      </div>
-      <div class="card-body">
-        GO
-      </div>
+    <div class="card card-primary text-center">
+    <div class="card-header">
+        <h3 class="card-title">ล่าสุด</h3>
+    </div>
+    <div class="card-body">
+    GO
+    </div>
     </div>
     </div>    
     </div>
@@ -54,7 +54,7 @@
     <div class="card-body">
     <table id="example" class="table table-striped table-bordered table-sm" style="width:100%">
         <thead>
-            <tr class="bg-primary">
+            <tr class="bg-primary" align="center">
                 <th>Grop Name</th>
                 <th>จำนวน</th>
                 <th>วันที่เข้าพัก</th>
@@ -65,20 +65,30 @@
         </thead>
         <tbody>
             @foreach ($create_link as $link)
-            <tr>
+            <tr align="center">
                 <td>{{ $link->link_group_name }}</td>
                 <td>{{ $link->link_gust_in }}</td>
                 <td>{{ date('d-m-Y', strtotime($link->link_staying_from)) }}</td>
-                <td>{{  url('')  }}{{ $link->link_th }}</td>
-                <td>{{  url('')  }}{{ $link->link_en }}</td>
+                <td align="left">
+                    <!-- Link TH -->
+                    <button class="btn btn-sm btn-success" linkto="{{ url('') }}{{ $link->link_th }}" onclick="onopenview(this);" data-toggle="tooltip" data-placement="top" title="เปิดลิ้งค์ ภาษาไทย"><i class="fas fa-external-link-alt"></i></button>
+                    <!--  Copy TH-->
+                    <button class="btn btn-copy btn-sm btn-info" onclick="Copy(this);" data-toggle="tooltip" data-placement="top" title="คัดลอกลิ้งค์" data-clipboard-text="{{ url('') }}{{ $link->link_th }}"><i class="far fa-copy"></i></button>
+                </td>
+                <td align="left">
+                    <!-- Link EN -->
+                    <button class="btn btn-sm btn-success" linkto="{{ url('') }}{{ $link->link_en }}" onclick="onopenview(this);" data-toggle="tooltip" data-placement="top" title="เปิดลิ้งค์ ภาษาอังกฤษ"><i class="fas fa-external-link-alt"></i></button>
+                    <!--  Copy EN -->
+                    <button class="btn btn-copy btn-sm btn-info" onclick="Copy(this);" data-toggle="tooltip" data-placement="top" title="คัดลอกลิ้งค์" data-clipboard-text="{{ url('') }}{{ $link->link_en }}"><i class="far fa-copy"></i></button>                    
+                </td>
                 <td>
-                    <button class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="ก็อปปี้ข้อมูล">Copry</button>
+                    <button class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="ก็อปปี้ข้อมูล">รอ</button>
                 </td>
             </tr>
             @endforeach 
         </tbody>
         <tfoot>
-            <tr class="bg-primary">
+            <tr class="bg-primary" align="center">
                 <th>Grop Name</th>
                 <th>จำนวน</th>
                 <th>วันที่เข้าพัก</th>
@@ -98,6 +108,8 @@
   <script type="text/javascript" src="{{ url('public/plugins/datatables/datatables.js') }}"></script>
   <script type="text/javascript" src="{{ url('public/plugins/datatables/DataTables-1.10.18/js/dataTables.bootstrap4.js') }}"></script>
   <script type="text/javascript" src="{{ url('public/plugins/datatables/Responsive-2.2.2/js/responsive.bootstrap4.js') }}"></script>
+  <!-- Clipboardjs --> 
+  <script type="text/javascript" src="{{ url('node_modules/clipboard/dist/clipboard.js') }}"></script>
   <!-- Use script -->
   <script type="text/javascript">
     $(document).ready(function() { 
@@ -130,5 +142,12 @@
     "order":[[2,'desc']],     
     });
     });
+    var onopenview = function onopenview(e) {
+        var link = $(e).attr("linkto");
+        window.open(link, '_blank');
+    }
+    var Copy = function Copy(e) {
+    var clipboard = new ClipboardJS('.btn-copy'); 
+    }
   </script>
 </html>

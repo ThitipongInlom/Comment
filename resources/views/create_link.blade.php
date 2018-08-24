@@ -28,7 +28,6 @@
     <div class="container">
     <div class="row">
     <div class="col-md-12">
-
     <div class="card card-primary">
       <div class="card-header">
           <h3 class="card-title text-center">Create Link</h3>
@@ -39,20 +38,21 @@
         @csrf
           <div class="form-group">
             <label for="groupname"><h4>Group Name</h4></label>
-            <input type="text" class="form-control col-4 input-sm" id="groupname" name="groupname" placeholder="Group Name">
+            <input type="text" class="form-control col-4 input-sm" id="groupname" name="groupname" placeholder="Group Name" required>
           </div>
           <div class="form-group">
             <label for="number_of_people"><h4>Number OF People</h4></label>
-            <input type="text" class="form-control col-4 input-sm" id="number_of_people" name="numberprople" placeholder="Number OF People">
+            <input type="text" class="form-control col-4 input-sm" id="number_of_people" name="numberprople" placeholder="Number OF People" required>
           </div>
           <div class="form-group">
             <label for="number_of_people"><h4>Stay From</h4></label>
-            <input type="text" class="form-control col-2 datepicker input-sm" id="number_of_people" name="stayin" placeholder="Stay From">
+            <input type="text" class="form-control col-2 datepicker input-sm" id="number_of_people" name="stayin" placeholder="Stay From" required>
           </div>  
           <div class="form-group">
             <label for="number_of_people"><h4>Stay To</h4></label>
-            <input type="text" class="form-control col-2 datepicker input-sm" id="number_of_people" name="stayto"  placeholder="Stay To">
-          </div>              
+            <input type="text" class="form-control col-2 datepicker input-sm" id="number_of_people" name="stayto"  placeholder="Stay To" required>
+          </div>   
+          <hr>           
           <button class="btn btn-outline-success">Create</button>    
         </form>
         </div>

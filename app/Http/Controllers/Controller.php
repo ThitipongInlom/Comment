@@ -35,35 +35,40 @@ class Controller extends BaseController
             'grop'      => $grop,
             'encode'    => $encode]);  
         }else{
-        return view('404');     
+        return redirect('404');   
         }  
         }else{
-        return view('404'); 
+        return redirect('404');
         }
     }       
 
     public function View_Information()
     {
-        return view('view_information'); 
+        $create_link = DB::select("select * from create_link");
+        return view('view_information',[
+            'create_link' => $create_link,
+            ]); 
     }
-    public function Getdata()
-    {
-     return datatables()->of(DB::table('create_link'))->toJson();
-    }
+
 
     public function Save_Data()
     {
         date_default_timezone_set("Asia/Bangkok");
         $today = now();
+
+        // Count Grop And Plus 1
+        $countdata = DB::table('comment_detail')->where('encode', $_POST['encode'])->count();
+        $recountdata = $countdata+1;
          
         // Insert Data
         DB::table('comment_detail')->insert([
+        'num_save'   => $recountdata,
         'encode'     => $_POST['encode'],
         'token_save' => $_POST['_token'],
         'Today'      => $today
         ]);
 
-        // turn id lastinsert
+        // Turn id lastinsert
         $id = DB::getPdo()->lastInsertId();
 
         // Update Comment

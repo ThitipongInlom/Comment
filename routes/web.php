@@ -1,18 +1,9 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 // Show Index
 Route::get('/{locale}/{encode}', 'Controller@Show_welcome_encode');
+// List View
+Route::get('/{locale}/{encode}/{list}', 'View_Data@List_View');
 // Save Data
 Route::post('/Save_Data', 'Controller@Save_Data');
 // Main Admin Page
@@ -33,5 +24,7 @@ Route::get('/Create_Link', 'Login@Create_Link');
 Route::post('/Do_create_link', 'Login@Do_create_link');
 // View_Information
 Route::get('/View_Information', 'Controller@View_Information');
-// Get Data
-Route::get('/Getdata', 'Controller@Getdata');
+// 404 Error Page
+Route::get('/404', function () {
+	return view('404');
+});

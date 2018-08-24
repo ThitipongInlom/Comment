@@ -35,15 +35,42 @@
         <h3 class="card-title text-center">View</h3>
       </div>
       <div class="card-body">
-      <table id="TableData" class="table table-bordered table-sm" style="width:100%">
-          <thead>
-              <tr class="bg-primary">
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Action</th>
-              </tr>
-          </thead>
-      </table>
+    <table id="example" class="table table-striped table-bordered table-sm" style="width:100%">
+        <thead>
+            <tr class="bg-primary" align="center">
+                <th>Grop Name</th>
+                <th>จำนวน</th>
+                <th>วันที่เข้าพัก</th>
+                <th>คนส่งแบบสอบถามล่าสุด</th>
+                <th>ลิ้งค์ ภาษาอังกฤษ</th>
+                <th>ตัวช่วย</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($create_link as $link)
+            <tr align="center">
+                <td>{{ $link->link_group_name }}</td>
+                <td>{{ $link->link_gust_in }}</td>
+                <td>{{ date('d-m-Y', strtotime($link->link_staying_from)) }}</td>
+                <td></td>
+                <td></td>
+                <td>
+                    <button class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="ดูข้อมูล">View</button>
+                </td>
+            </tr>
+            @endforeach 
+        </tbody>
+        <tfoot>
+            <tr class="bg-primary" align="center">
+                <th>Grop Name</th>
+                <th>จำนวน</th>
+                <th>วันที่เข้าพัก</th>
+                <th>คนส่งแบบสอบถามล่าสุด</th>
+                <th>ลิ้งค์ ภาษาอังกฤษ</th>
+                <th>ตัวช่วย</th>
+            </tr>
+        </tfoot>
+    </table>        
       </div>
     </div>      
     </div>   
@@ -59,34 +86,37 @@
   <!--  Date picker-->
   <script type="text/javascript" src="{{ url('public/plugins/datepicker/js/bootstrap-datepicker.js') }}"></script>
   <script type="text/javascript" src="{{ url('public/plugins/datepicker/locales/bootstrap-datepicker.th.min.js') }}"></script>
+  <!-- Use script -->
   <script type="text/javascript">
-  $(document).ready(function() {
-       $('#TableData').DataTable({
-          "responsive": true,  
-          "processing": true,
-          "serverSide": true,
-          "aLengthMenu": [[ 5, 10, -1], [  5, 10, "ทั้งหมด"]],
-          "ajax": "{{ url('/Getdata') }}",
-          "columns":[
-              { "data": "link_group_name" },
-              { "data": "link_gust_in" },
-          ],
-          "language": {
-          "lengthMenu":"แสดง _MENU_ แถว",
-          "search":"ค้นหา:",
-          "info":"แสดง _START_ ถึง _END_ ทั้งหมด _TOTAL_ แถว",
-          "infoEmpty":"แสดง 0 ถึง 0 ทั้งหมด 0 แถว",
-          "infoFiltered":"(จาก ทั้งหมด _MAX_ ทั้งหมด แถว)",
-          "processing": "กำลังโหลดข้อมูล...",
-          "zeroRecords": "ไม่มีข้อมูล",
-          "paginate": {
-          "first": "หน้าแรก",
-          "last": "หน้าสุดท้าย",
-          "next": "ต่อไป",
-          "previous": "ย้อนกลับ"
-          },
-          },
-       });
-  });
-  </script>  
+    $(document).ready(function() { 
+    $('#example').DataTable({
+    "responsive": "true",  
+    "aLengthMenu": [[ 5, -1], [ "5","ทั้งหมด"]],
+    "language": {
+    "lengthMenu":"แสดง _MENU_ แถว",
+    "search":"ค้นหา:",
+    "info":"แสดง _START_ ถึง _END_ ทั้งหมด _TOTAL_ แถว",
+    "infoEmpty":"แสดง 0 ถึง 0 ทั้งหมด 0 แถว",
+    "infoFiltered":"(จาก ทั้งหมด _MAX_ ทั้งหมด แถว)",
+    "processing": "กำลังโหลดข้อมูล...",
+    "zeroRecords": "ไม่มีข้อมูล",
+    "paginate": {
+    "first": "หน้าแรก",
+    "last": "หน้าสุดท้าย",
+    "next": "ต่อไป",
+    "previous": "ย้อนกลับ"
+    },
+    }, 
+    "columnDefs": [
+    { "targets": 0 },
+    { "targets": 1 },
+    { "type":"date-eu", "targets": 2 },
+    { "targets": 3 },
+    { "targets": 4 },
+    { "orderable": "false"}
+    ],  
+    "order":[[2,'desc']],     
+    });
+    });
+  </script>
 </html>
