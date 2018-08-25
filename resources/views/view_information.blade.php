@@ -55,7 +55,7 @@
                 <td></td>
                 <td></td>
                 <td>
-                    <button class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="ดูข้อมูล">View</button>
+                    <button class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="ดูข้อมูล" Gropname="{{ $link->link_encode }}" onclick="show_view(this);">View</button>
                 </td>
             </tr>
             @endforeach 
@@ -76,6 +76,25 @@
     </div>   
     </div>   
     </div>
+
+<div class="modal fade" id="popup_view" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title">ดูรายการ คอมเม้น</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="display_body_popup_view">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 	<!-- All Js -->
 	<script type="text/javascript" src="{{ url('js/app.js') }}"></script>
@@ -118,5 +137,33 @@
     "order":[[2,'desc']],     
     });
     });
+
+    // Open Link
+    var onopenview = function onopenview(e) {
+        var link = $(e).attr("linkto");
+        window.open(link, '_blank');
+    }  
+
+    // To Do On Model Show
+    $('#popup_view').on('show.bs.modal', function (e) {
+    console.log('TO DO');
+    });
+
+    var show_view = function show_view(e) {
+        var Gropname = $(e).attr('Gropname');
+        $.ajax({
+            url: '{{ url('/Table_View') }}',
+            type: 'GET',
+            data: {Gropname: Gropname},
+            success: function (res) {
+                var Table = JSON.parse(res);
+                $("#display_body_popup_view").html(Table.Table);
+                $('#popup_view').modal('show');
+                console.log(Table);
+
+            }
+        });
+        
+    }
   </script>
 </html>

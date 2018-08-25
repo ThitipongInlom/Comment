@@ -44,7 +44,9 @@ class Login extends Controller
 
     public function Create_Link()
     {
-        return view('create_link');
+        $room = DB::select("select * from room");
+        return view('create_link',[
+            'room' => $room]);
     }
 
     public function Do_create_link()
@@ -52,6 +54,7 @@ class Login extends Controller
         $groupname = Input::post('groupname');
         $numberprople = Input::post('numberprople');
         $stayin = Input::post('stayin');
+        $room = Input::post('room');
         $restayin = str_replace('/', '-', $stayin);
         $resultstayin  = date('Y-m-d', strtotime($restayin));
         $stayto = Input::post('stayto');
@@ -61,6 +64,7 @@ class Login extends Controller
         DB::table('create_link')->insert(
             [
             'link_create' => $today, 
+            'link_room' => $room,
             'link_group_name' => $groupname,
             'link_gust_in' => $numberprople,
             'link_staying_from' => $resultstayin,

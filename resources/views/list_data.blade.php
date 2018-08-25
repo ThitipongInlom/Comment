@@ -76,13 +76,23 @@
 			                		<td align="right" valign="baseline"><h4>{{ __('form.yes') }}</h4></td>
 			                		<td align="right">
 						                <div class="icheck-primary icheck-inline">
-						                	<input type="radio" class="radiocheck" id="radio{{ $body->id.$body->head_id.$body->head_id }}" name="radio{{ $body->head_id.$body->sup_num }}" value="Yes">
+						                	<input type="radio" class="radiocheck" id="radio{{ $body->id.$body->head_id.$body->head_id }}" name="radio{{ $body->head_id.$body->sup_num }}" value="Yes" 
+						                	<?php 	$data = 'radio'.$body->head_id.$body->sup_num; $new_Data_view = $Data_view[0];
+						                	if($new_Data_view->$data == 'Yes'){
+						                		echo 'checked';
+						                	}
+						                	?> >
 						                	<label for="radio{{ $body->id.$body->head_id.$body->head_id }}"></label>
 						                </div>			                			
 			                		</td>
 			                		<td>
 						                <div class="icheck-primary icheck-inline">
-						                	<input type="radio" class="radiocheck" id="radio{{ $body->id.$body->head_id.$body->head_id+1 }}" name="radio{{ $body->head_id.$body->sup_num }}" value="No" >
+						                	<input type="radio" class="radiocheck" id="radio{{ $body->id.$body->head_id.$body->head_id+1 }}" name="radio{{ $body->head_id.$body->sup_num }}" value="No" 
+						                	<?php 	$data = 'radio'.$body->head_id.$body->sup_num; $new_Data_view = $Data_view[0];
+						                	if($new_Data_view->$data == 'No'){
+						                		echo 'checked';
+						                	}
+						                	?>>
 						                	<label for="radio{{ $body->id.$body->head_id.$body->head_id+1 }}"></label>
 						                </div>			                			
 			                		</td>
@@ -90,7 +100,12 @@
 			                	</tr>
 			                </table>
 			                <h5 class="animated slideInUp" align="left"><b>{{ __('form.comment') }}</b></h5>
-			                <input type="text" class="form-control" placeholder="Comment" name="comment{{ $body->head_id.$body->sup_num }}">
+			                <input type="text" class="form-control" name="comment{{ $body->head_id.$body->sup_num }}"
+			                <?php $data = 'comment'.$body->head_id.$body->sup_num; $new_Data_view = $Data_view[0];
+						    if($new_Data_view->$data){
+						        echo 'value="'.$new_Data_view->$data.'"';
+						    }
+						    ?> disabled>
 			                <br>
 			                <!-- End Body -->
 			                @endif

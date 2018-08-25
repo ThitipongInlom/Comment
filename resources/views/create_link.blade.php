@@ -38,19 +38,28 @@
         @csrf
           <div class="form-group">
             <label for="groupname"><h4>Group Name</h4></label>
-            <input type="text" class="form-control col-4 input-sm" id="groupname" name="groupname" placeholder="Group Name" required>
+            <input type="text" class="form-control col-4 form-control-sm" id="groupname" name="groupname" placeholder="Group Name" required>
           </div>
           <div class="form-group">
             <label for="number_of_people"><h4>Number OF People</h4></label>
-            <input type="text" class="form-control col-4 input-sm" id="number_of_people" name="numberprople" placeholder="Number OF People" required>
+            <input type="text" class="form-control col-4 form-control-sm" id="number_of_people" name="numberprople" placeholder="Number OF People" required>
           </div>
           <div class="form-group">
+            <label for="room_to_use"><h4>Room To USE</h4></label><br>
+              <select id="room_to_use" name="room" class="custom-select custom-select-sm col-4">
+                <option selected>เลือกห้องประชุมที่ใช้งาน</option>
+                @foreach ($room as $row)
+                <option value="{{ $row->room_name }}">{{ $row->room_name }}</option>
+                @endforeach 
+              </select>
+          </div>          
+          <div class="form-group">
             <label for="number_of_people"><h4>Stay From</h4></label>
-            <input type="text" class="form-control col-2 datepicker input-sm" id="number_of_people" name="stayin" placeholder="Stay From" required>
+            <input type="text" class="form-control col-2 datepicker form-control-sm" id="number_of_people" name="stayin" placeholder="Stay From" required>
           </div>  
           <div class="form-group">
             <label for="number_of_people"><h4>Stay To</h4></label>
-            <input type="text" class="form-control col-2 datepicker input-sm" id="number_of_people" name="stayto"  placeholder="Stay To" required>
+            <input type="text" class="form-control col-2 datepicker form-control-sm" id="number_of_people" name="stayto"  placeholder="Stay To" required>
           </div>   
           <hr>           
           <button class="btn btn-outline-success">Create</button>    
@@ -74,7 +83,8 @@
   <script type="text/javascript">
     $('.datepicker').datepicker({
       format: 'dd/mm/yyyy',
-      language: 'th'
+      language: 'th',
+      todayHighlight: true,
     });
   </script>
 </html>

@@ -28,3 +28,5 @@ Route::get('/View_Information', 'Controller@View_Information');
 Route::get('/404', function () {
 	return view('404');
 });
+// Table Show
+Route::get('/Table_View', 'View_Data@Table_View');

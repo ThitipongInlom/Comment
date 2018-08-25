@@ -1,8 +1,7 @@
-require('./adminlte');
-require('./bootstrap');
-
 window.Vue = require('vue');
 window.jQuery = require('jquery');
+require('./bootstrap');
+require('./adminlte');
 
 // Fa Fa Icon
 require('fontawesome-free/js/all.js');

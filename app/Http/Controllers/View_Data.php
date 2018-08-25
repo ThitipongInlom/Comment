@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -49,5 +50,24 @@ class View_Data extends Controller
         }else{
         return redirect('404');
         }    	
+    }
+
+    public function Table_View()
+    {
+    	$encode = Input::get('Gropname');
+    	$Data_Grop = DB::select("SELECT * FROM comment_detail WHERE encode = '$encode'");
+    	$CountData = DB::table('comment_detail')->where('encode', $encode)->count();
+
+    	$table  = "<table class='table table-sm table-bordered'>";
+    	$table .= "<thead><tr align='center' class='bg-primary'><th>ลำดับ</th><th>ชื่อลูกค้า</th><th>เบอร์ลูกค้า</th><th>วันที่เวลาที่ลูกค้าส่ง</th><th>E-mail</th><th>ตัวช่วย</th></tr></thead><tbody>";
+    	$i = 0;
+    	foreach ($Data_Grop as $key => $data) {
+    	$i++;
+    	$table .= "<tr align='center'><td>$i</td><td>".$data->firstname.' '.$data->lastname."</td><td>".$data->telephone."</td><td>".$data->Today."</td><td>".$data->email."</td><td><button class='btn btn-sm btn-success' data-toggle='tooltip' data-placement='top' title='เปิดลิ้งค์' linkto='". url('').'/th'.'/'.$data->encode.'/'.$data->num_save ."' onclick='  onopenview(this)'><i class='fas fa-external-link-alt'></i></button></td></tr>";
+    	}
+    	$table .= "</tbody></table>";
+
+    	$array = array('Table' => $table, 'Data' => $Data_Grop);
+    	echo json_encode($array);
     }
 }
