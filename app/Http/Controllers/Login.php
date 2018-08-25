@@ -20,13 +20,13 @@ class Login extends Controller
     	$username = Input::post('username');
     	$password = Input::post('password');
 		if (Auth::attempt(['username' => $username, 'password' => $password])) {
-				$data = ['Name' => 'Nice', 'Pass' => 'Nice', 'Login' => 'Username'];
-				Session::put('Login', $data);
+                $users_data = DB::table('users')->select('*')->where('username', $username)->get();
+				Session::put('Login', $users_data);
 		        return redirect('Dashboard');
 		}
 		elseif (Auth::attempt(['email'=> $username, 'password' => $password])) {
-				$data = ['Name' => 'Nice', 'Pass' => 'Nice', 'Login' => 'E-Mail'];
-				Session::put('Login', $data);
+				$users_data = DB::table('users')->select('*')->where('username', $username)->get();
+				Session::put('Login', $users_data);
 		        return redirect('Dashboard');
 		} 
 		else {
@@ -40,6 +40,11 @@ class Login extends Controller
     	return view('dashboard',[
             'create_link' => $create_link,
             ]);
+    }
+
+    public function User()
+    {
+        return view('user');
     }
 
     public function Create_Link()
@@ -75,11 +80,6 @@ class Login extends Controller
         ]
         );  
         return redirect('Dashboard');      
-    }
-
-    public function Star()
-    {
-    	return view('star');
     }
 
     public function Logout()

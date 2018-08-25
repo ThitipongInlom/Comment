@@ -14,8 +14,6 @@ Route::get('/Admin', function () {
 Route::post('/Do_login', 'Login@Do_login');
 // Dashboard
 Route::get('/Dashboard', 'Login@Dashboard');
-// Star Program
-Route::get('/Star', 'Login@Star');
 // Logout
 Route::get('/Logout', 'Login@Logout');
 // Create Link
@@ -24,6 +22,8 @@ Route::get('/Create_Link', 'Login@Create_Link');
 Route::post('/Do_create_link', 'Login@Do_create_link');
 // View_Information
 Route::get('/View_Information', 'Controller@View_Information');
+// User Page
+Route::get('/User', 'Login@User');
 // 404 Error Page
 Route::get('/404', function () {
 	return view('404');

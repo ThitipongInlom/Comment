@@ -115,7 +115,7 @@
     $(document).ready(function() { 
     $('#example').DataTable({
     "responsive": "true",  
-    "aLengthMenu": [[ 5, -1], [ "5","ทั้งหมด"]],
+    "aLengthMenu": [[ 5, 10, -1], [ "5", "10", "ทั้งหมด"]],
     "language": {
     "lengthMenu":"แสดง _MENU_ แถว",
     "search":"ค้นหา:",

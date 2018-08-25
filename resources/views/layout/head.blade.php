@@ -20,9 +20,19 @@
                       <li class="nav-item">
                         <a class="nav-link" href="{{ url('/View_Information') }}">View information</a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#Pricing">Conclude</a>
-                      </li>
+                      @if (Session::get('Login.0')->status == '0')
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Admin
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{{ url('/User') }}">จัดการผู้ใช้งาน</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                      </li>  
+                      @endif                    
                     </ul>                
                     <a href="{{ url('/Logout') }}">
                     <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="bottom" title="ก็อปปี้ข้อมูล">Logout</button>

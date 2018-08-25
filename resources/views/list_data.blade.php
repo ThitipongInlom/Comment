@@ -58,6 +58,9 @@
 					    <label class="col-form-label"><h5><b>Email:</b> {{ $Data_view[0]->email }}</h5></label>
 					    <br>
 					    <label class="col-form-label"><h5><b>Telephone:</b> {{ $Data_view[0]->telephone }}</h5></label>
+					    <br>
+					    <button class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="ย้อนกลับ"><i class="fas fa-arrow-left"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;
+					    <button class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="ถัดไป"><i class="fas fa-arrow-right"></i></button>
 					    </div>												
 						</div>					 	
 					  	@foreach ($cardhead as $card)

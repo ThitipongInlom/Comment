@@ -29,7 +29,6 @@
     <div class="container">
     <div class="row">
     <div class="col-md-12">
-
     <div class="card card-primary">
       <div class="card-header">
         <h3 class="card-title text-center">View</h3>
@@ -41,6 +40,7 @@
                 <th>Grop Name</th>
                 <th>จำนวน</th>
                 <th>วันที่เข้าพัก</th>
+                <th>รวม</th>
                 <th>คนส่งแบบสอบถามล่าสุด</th>
                 <th>ลิ้งค์ ภาษาอังกฤษ</th>
                 <th>ตัวช่วย</th>
@@ -52,6 +52,7 @@
                 <td>{{ $link->link_group_name }}</td>
                 <td>{{ $link->link_gust_in }}</td>
                 <td>{{ date('d-m-Y', strtotime($link->link_staying_from)) }}</td>
+                <td>@foreach ($CountTotal as $total)@if ($total->encode == $link->link_encode) <?php echo '<span class="badge badge-primary">'.$total->Totalcount.'</span>';  ?> @endif @endforeach </td>
                 <td></td>
                 <td></td>
                 <td>
@@ -65,6 +66,7 @@
                 <th>Grop Name</th>
                 <th>จำนวน</th>
                 <th>วันที่เข้าพัก</th>
+                <th>รวม</th>
                 <th>คนส่งแบบสอบถามล่าสุด</th>
                 <th>ลิ้งค์ ภาษาอังกฤษ</th>
                 <th>ตัวช่วย</th>
@@ -77,24 +79,23 @@
     </div>   
     </div>
 
-<div class="modal fade" id="popup_view" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header bg-primary">
-        <h5 class="modal-title">ดูรายการ คอมเม้น</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="display_body_popup_view">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <div class="modal fade" id="popup_view" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-primary">
+            <h5 class="modal-title">ดูรายการ คอมเม้น</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="display_body_popup_view">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
 </body>
 	<!-- All Js -->
 	<script type="text/javascript" src="{{ url('js/app.js') }}"></script>

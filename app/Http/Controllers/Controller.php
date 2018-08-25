@@ -45,11 +45,11 @@ class Controller extends BaseController
     public function View_Information()
     {
         $create_link = DB::select("select * from create_link");
+        $CountTotal = DB::select("select COUNT(encode) AS Totalcount,encode from comment_detail group by encode");
         return view('view_information',[
             'create_link' => $create_link,
-            ]); 
+            'CountTotal'=> $CountTotal,]); 
     }
-
 
     public function Save_Data()
     {
