@@ -3,18 +3,24 @@
 <h2>Installation Instructions</h2>
 
 ```
-+--------+----------+-------------------+------+-----------------------------------------------------+--------------+
-| Domain | Method   | URI               | Name | Action                                              | Middleware   |
-+--------+----------+-------------------+------+-----------------------------------------------------+--------------+
-|        | GET|HEAD | Admin             |      | Closure                                             | web          |
-|        | GET|HEAD | Dashboard         |      | App\Http\Controllers\Login@Dashboard                | web          |
-|        | POST     | Do_login          |      | App\Http\Controllers\Login@Do_login                 | web          |
-|        | GET|HEAD | Logout            |      | App\Http\Controllers\Login@Logout                   | web          |
-|        | POST     | Save_Data         |      | App\Http\Controllers\Controller@Save_Data           | web          |
-|        | GET|HEAD | Star              |      | App\Http\Controllers\Login@Star                     | web          |
-|        | GET|HEAD | api/user          |      | Closure                                             | api,auth:api |
-|        | GET|HEAD | {locale}/{encode} |      | App\Http\Controllers\Controller@Show_welcome_encode | web          |
-+--------+----------+-------------------+------+-----------------------------------------------------+--------------+
++--------+----------+--------------------------+------+-----------------------------------------------------+--------------+
+| Domain | Method   | URI                      | Name | Action                                              | Middleware   |
++--------+----------+--------------------------+------+-----------------------------------------------------+--------------+
+|        | GET|HEAD | 404                      |      | Closure                                             | web          |
+|        | GET|HEAD | Admin                    |      | Closure                                             | web          |
+|        | GET|HEAD | Create_Link              |      | App\Http\Controllers\Login@Create_Link              | web          |
+|        | GET|HEAD | Dashboard                |      | App\Http\Controllers\Login@Dashboard                | web          |
+|        | POST     | Do_create_link           |      | App\Http\Controllers\Login@Do_create_link           | web          |
+|        | POST     | Do_login                 |      | App\Http\Controllers\Login@Do_login                 | web          |
+|        | GET|HEAD | Logout                   |      | App\Http\Controllers\Login@Logout                   | web          |
+|        | POST     | Save_Data                |      | App\Http\Controllers\Controller@Save_Data           | web          |
+|        | GET|HEAD | Star                     |      | App\Http\Controllers\Login@Star                     | web          |
+|        | GET|HEAD | Table_View               |      | App\Http\Controllers\View_Data@Table_View           | web          |
+|        | GET|HEAD | View_Information         |      | App\Http\Controllers\Controller@View_Information    | web          |
+|        | GET|HEAD | api/user                 |      | Closure                                             | api,auth:api |
+|        | GET|HEAD | {locale}/{encode}        |      | App\Http\Controllers\Controller@Show_welcome_encode | web          |
+|        | GET|HEAD | {locale}/{encode}/{list} |      | App\Http\Controllers\View_Data@List_View            | web          |
++--------+----------+--------------------------+------+-----------------------------------------------------+--------------+
 ```
 <h2>ตัวอย่างโปรแกรม</h2>
 
