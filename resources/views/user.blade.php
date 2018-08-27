@@ -21,6 +21,105 @@
         <body class="hold-transition login-page">
         @include('layout.head')
         <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                      <div class="card-header text-center">
+                        <h3 class="card-title">จัดการ User</h3>
+                        <div class="card-tools">
+                          <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#adduser" data-toggle="tooltip" data-placement="top" title="สร้าง User ใหม่">Add User</button>
+                        </div>                        
+                      </div>
+                      <div class="card-body">
+                        <table class="table table-sm table-bordered" id="tableuser">
+                            <thead>
+                                <tr align="center">
+                                    <th>Name</th>
+                                    <th>Username</th>
+                                    <th>E-mail</th>
+                                    <th>Status</th>
+                                    <th>Created</th>
+                                    <th>Update Login</th>
+                                    <th>ตัวช่วย</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($user as $data)
+                                <tr align="center">
+                                    <td>{{ $data->name }}</td>
+                                    <td>{{ $data->username }}</td>
+                                    <td>{{ $data->email }}</td>
+                                    <td>
+                                    @if ($data->status == '0')
+                                    {{ 'Admin' }}    
+                                    @endif
+                                    @if ($data->status == '1')
+                                    {{ 'User' }}
+                                    @endif
+                                    </td>
+                                    <td>{{ date('d-m-Y H:i:s', strtotime($data->created_at)) }}</td>
+                                    <td>{{ date('d-m-Y H:i:s', strtotime($data->updated_at)) }}</td>
+                                    <td>
+                                    <button class="btn btn-sm btn-warning">Edit</button>
+                                    <button class="btn btn-sm btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                @endforeach 
+                            </tbody>
+                        </table>
+                      </div>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="adduser" tabindex="-1" role="dialog" aria-labelledby="Add User" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <form action="{{ url('/Add_User') }}" method="post" accept-charset="utf-8">
+              @csrf
+              <div class="modal-header bg-primary">
+                <h5 class="modal-title" id="Add User">Add User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" align="center">
+                  <div class="form-group">
+                    <label for="inputname"><h4>Name</h4></label>
+                    <input type="text" class="form-control" id="inputname" name="inputname" placeholder="Name" required>
+                  </div>     
+                  <div class="form-group">
+                    <label for="inputusername"><h4>Username</h4></label>
+                    <input type="text" class="form-control" id="inputusername" name="inputusername" placeholder="Username" required>
+                  </div> 
+                  <div class="form-group">
+                    <label for="inputpassword"><h4>Password</h4></label>
+                    <input type="text" class="form-control" id="inputpassword" name="inputpassword" placeholder="Password" required>
+                  </div>   
+                  <div class="form-group">
+                    <label for="inputpemail"><h4>E-mail</h4></label>
+                    <input type="text" class="form-control" id="inputpemail" name="inputpemail" placeholder="E-mail" required>
+                  </div> 
+                  <div class="form-group">
+                    <label for="usertype"><h4>Type</h4></label><br>
+                      <select id="usertype" name="Type" class="custom-select col-4" required>
+                        <option value="1">User</option>
+                        <option value="0">Admin</option>
+                      </select>
+                  </div>                                                                                 
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
         </body>
         <!-- Data Table -->
         <script type="text/javascript" src="{{ url('public/plugins/datatables/datatables.js') }}"></script>
@@ -29,4 +128,36 @@
         <!-- Clipboardjs --> 
         <script type="text/javascript" src="{{ url('node_modules/clipboard/dist/clipboard.js') }}"></script>
         <!-- Use script -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#tableuser").DataTable({
+                "responsive": "true",  
+                "aLengthMenu": [[ 5, 10, -1], [ "5", "10", "ทั้งหมด"]],
+                "language": {
+                "lengthMenu":"แสดง _MENU_ แถว",
+                "search":"ค้นหา:",
+                "info":"แสดง _START_ ถึง _END_ ทั้งหมด _TOTAL_ แถว",
+                "infoEmpty":"แสดง 0 ถึง 0 ทั้งหมด 0 แถว",
+                "infoFiltered":"(จาก ทั้งหมด _MAX_ ทั้งหมด แถว)",
+                "processing": "กำลังโหลดข้อมูล...",
+                "zeroRecords": "ไม่มีข้อมูล",
+                "paginate": {
+                "first": "หน้าแรก",
+                "last": "หน้าสุดท้าย",
+                "next": "ต่อไป",
+                "previous": "ย้อนกลับ"
+                },
+                },  
+                "order":[[0,'desc']],  
+                "columnDefs": [
+                { "targets": 0 },
+                { "targets": 1 },
+                { "targets": 2 },
+                { "targets": 3 },
+                { "type":"date-eu", "targets": 4 },
+                { "orderable": "false"}
+                ],                                      
+                });
+            });
+        </script>
 </html>

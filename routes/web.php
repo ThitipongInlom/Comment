@@ -30,3 +30,5 @@ Route::get('/404', function () {
 });
 // Table Show
 Route::get('/Table_View', 'View_Data@Table_View');
+// Add User
+Route::post('/Add_User', 'Login@Do_add_user');
