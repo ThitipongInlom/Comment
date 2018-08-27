@@ -113,6 +113,7 @@
   <!-- Use script -->
   <script type="text/javascript">
     $(document).ready(function() { 
+        
     $('#example').DataTable({
     "responsive": "true",  
     "aLengthMenu": [[ 5, 10, -1], [ "5", "10", "ทั้งหมด"]],
