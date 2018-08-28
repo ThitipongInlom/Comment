@@ -47,8 +47,10 @@ class Login extends Controller
     public function Dashboard()
     {
         $create_link = DB::select("select * from create_link");
+        $CountTotal = DB::select("select COUNT(encode) AS Totalcount,encode from comment_detail group by encode");
     	return view('dashboard',[
             'create_link' => $create_link,
+            'CountTotal'=> $CountTotal
             ]);
     }
 

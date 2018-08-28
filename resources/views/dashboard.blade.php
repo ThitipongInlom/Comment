@@ -111,6 +111,7 @@
                 <th>วันที่เข้าพัก</th>
                 <th>ลิ้งค์ ภาษาไทย</th>
                 <th>ลิ้งค์ ภาษาอังกฤษ</th>
+                <th>ตอบกลับ</th>
                 <th>ตัวช่วย</th>
             </tr>
         </thead>
@@ -133,7 +134,10 @@
                     <button class="btn btn-copy btn-sm btn-info" onclick="Copy(this);" data-toggle="tooltip" data-placement="top" title="คัดลอกลิ้งค์" data-clipboard-text="{{ url('') }}{{ $link->link_en }}"><i class="far fa-copy"></i></button>                    
                 </td>
                 <td>
-                    <button class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="ก็อปปี้ข้อมูล">รอ</button>
+                    @foreach ($CountTotal as $total)@if ($total->encode == $link->link_encode) <?php echo '<span class="badge badge-primary">'.$total->Totalcount.'</span>';  ?> @endif @endforeach
+                </td>
+                <td>
+                    <button class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="ดูข้อมูล" Gropname="{{ $link->link_encode }}" onclick="show_view(this);">View</button>
                 </td>
             </tr>
             @endforeach 
@@ -145,6 +149,7 @@
                 <th>วันที่เข้าพัก</th>
                 <th>ลิ้งค์ ภาษาไทย</th>
                 <th>ลิ้งค์ ภาษาอังกฤษ</th>
+                <th>ตอบกลับ</th>
                 <th>ตัวช่วย</th>
             </tr>
         </tfoot>
@@ -154,6 +159,24 @@
     </div>   
     </div>   
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="popup_view" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-primary">
+            <h5 class="modal-title">ดูรายการ คอมเม้น</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="display_body_popup_view">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>    
 </body>
   <!-- Data Table -->
   <script type="text/javascript" src="{{ url('public/plugins/datatables/datatables.js') }}"></script>
@@ -190,6 +213,7 @@
     { "type":"date-eu", "targets": 2 },
     { "targets": 3 },
     { "targets": 4 },
+    { "targets": 5 },
     { "orderable": "false"}
     ],  
     "order":[[2,'desc']],     
@@ -202,5 +226,20 @@
     var Copy = function Copy(e) {
     var clipboard = new ClipboardJS('.btn-copy'); 
     }
+    var show_view = function show_view(e) {
+        var Gropname = $(e).attr('Gropname');
+        $.ajax({
+            url: '{{ url('/Table_View') }}',
+            type: 'GET',
+            data: {Gropname: Gropname},
+            success: function (res) {
+                var Table = JSON.parse(res);
+                $("#display_body_popup_view").html(Table.Table);
+                $('#popup_view').modal('show');
+                console.log(Table);
+
+            }
+        });    
+    }    
   </script>
 </html>

@@ -29,6 +29,11 @@ class View_Data extends Controller
         $Data_view = DB::table('comment_detail')->where('encode', $encode)->where('num_save', $list)->get();
         $CountData = DB::table('comment_detail')->where('encode', $encode)->where('num_save', $list)->count();
 
+        $backnum   = $list - 1;
+        $Backpage  = DB::table('comment_detail')->where('encode', $encode)->where('num_save', $backnum)->count();
+        $nextnum   = $list + 1;
+        $Nextpage  = DB::table('comment_detail')->where('encode', $encode)->where('num_save', $nextnum)->count();
+
         if ($grop != null) {
         if ($CountData == '1') {
         return view('list_data', [
@@ -40,7 +45,12 @@ class View_Data extends Controller
             'grop'      => $grop,
             'encode'    => $encode,
             'Data_view' => $Data_view,
-            'List_View' => $list]); 
+            'List_View' => $list,
+            'locale'    => $locale,
+            'Backpage'  => $Backpage,
+            'Nextpage'  => $Nextpage,
+            'backnum'   => $backnum,
+            'nextnum'   => $nextnum]); 
         }else{
         return redirect('404'); 	
    		}    
