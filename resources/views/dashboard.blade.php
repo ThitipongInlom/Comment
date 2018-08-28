@@ -16,12 +16,63 @@
         <link rel="stylesheet" type="text/css" href="{{ url('plugins/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.css') }}"> 
         <link rel="stylesheet" type="text/css" href="{{ url('plugins/datatables/Responsive-2.2.2/css/responsive.bootstrap4.css') }}">
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">	
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <style type="text/css">
+        .bodydata{
+          display: none;
+        }       
+        .spinner {
+          margin: 100px auto 0;
+          width: 70px;
+          text-align: center;
+        }
+
+        .spinner > div {
+          width: 18px;
+          height: 18px;
+          background-color: #333;
+
+          border-radius: 100%;
+          display: inline-block;
+          -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+          animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        }
+
+        .spinner .bounce1 {
+          -webkit-animation-delay: -0.32s;
+          animation-delay: -0.32s;
+        }
+
+        .spinner .bounce2 {
+          -webkit-animation-delay: -0.16s;
+          animation-delay: -0.16s;
+        }
+
+        @-webkit-keyframes sk-bouncedelay {
+          0%, 80%, 100% { -webkit-transform: scale(0) }
+          40% { -webkit-transform: scale(1.0) }
+        }
+
+        @keyframes sk-bouncedelay {
+          0%, 80%, 100% { 
+            -webkit-transform: scale(0);
+            transform: scale(0);
+          } 40% { 
+            -webkit-transform: scale(1.0);
+            transform: scale(1.0);
+          }
+        }            
+        </style>        	
 </head>
 <body class="hold-transition login-page">
     @include('layout.head')
     <br>
-    <div class="container">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>    
+    <div class="container bodydata">
     <div class="row">
     <div class="col-md-6">
     <div class="card card-primary text-center">
@@ -113,7 +164,8 @@
   <!-- Use script -->
   <script type="text/javascript">
     $(document).ready(function() { 
-        
+    $(".spinner").hide();
+    $(".bodydata").fadeIn(400);          
     $('#example').DataTable({
     "responsive": "true",  
     "aLengthMenu": [[ 5, 10, -1], [ "5", "10", "ทั้งหมด"]],
