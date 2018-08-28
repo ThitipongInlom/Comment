@@ -48,9 +48,9 @@
 					  <div class="card-body">
 						<div class="form-group row">
 					    <div class="col-md-12" align="center">
-					    <label class="col-form-label"><h5><b>Group:</b> {{ $grop[0]->link_group_name }}</h5></label>
+					    <label class="col-form-label"><h5><b>Group:</b> {{ $grop[0]->link_group_name }}  </h5></label>
 					    <br>
-					    <label class="col-form-label"><h5><b>From:</b> {{ date('d-m-Y', strtotime($grop[0]->link_staying_from)) }} | <b>To:</b> {{ date('d-m-Y', strtotime($grop[0]->link_staying_to)) }}</h5></label>
+					    <label class="col-form-label"><h5><b>From:</b> {{ date('d-m-Y', strtotime($grop[0]->link_staying_from)) }} || <b>To:</b> {{ date('d-m-Y', strtotime($grop[0]->link_staying_to)) }}</h5></label>
 					    </div>												
 						</div>
 											  	
@@ -92,7 +92,53 @@
 			              </div>
 			            </div>	
 			            <!-- End Card FQA -->    					
-						@endforeach	
+						@endforeach
+						<div class="card card-danger">
+			              <div class="card-header">
+			                <h3 class="card-title">{{ __('form.rating') }}</h3>
+			              </div>
+			              <div class="card-body">
+			              	<style type="text/css">
+			              	.starrating > input {display: none;} 	
+							.starrating > label
+							{
+							  color: #222222;
+							}		
+							.starrating > input:checked ~ label
+							{ color: #ffca08 ; } 
+
+							.starrating > input:hover ~ label
+							{ color: #ffca08 ;  }							              	
+			              	</style>
+			              	<div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
+			              	<!-- 4 Star -->
+			              	<input type="radio" id="star5" name="rating" value="5">
+			              	<label for="star5">
+			                <i class="fas fa-star fa-4x" data-toggle="tooltip" data-placement="bottom" title="5คะแนน"></i>
+			            	</label>
+			            	<!-- 4 Star -->
+			            	<input type="radio" id="star4" name="rating" value="4">
+			            	<label for="star4">
+			                <i class="fas fa-star fa-4x" data-toggle="tooltip" data-placement="bottom" title="4คะแนน"></i>
+			            	</label>
+			            	<!-- 3 Star -->
+			            	<input type="radio" id="star3" name="rating" value="3">
+			            	<label for="star3">
+			                <i class="fas fa-star fa-4x" data-toggle="tooltip" data-placement="bottom" title="3คะแนน"></i>
+			            	</label>
+			            	<!-- 2 Star -->
+			            	<input type="radio" id="star2" name="rating" value="2">
+			            	<label for="star2">
+			                <i class="fas fa-star fa-4x" data-toggle="tooltip" data-placement="bottom" title="2คะแนน"></i>
+			            	</label>
+			            	<!-- 1 Star -->
+			            	<input type="radio" id="star1" name="rating" value="1">
+			            	<label for="star1">
+			                <i class="fas fa-star fa-4x" data-toggle="tooltip" data-placement="bottom" title="1คะแนน"></i>
+			            	</label>
+			            	</div>
+			              </div>
+			            </div>						
 						<hr>
 						<h5>{{ $foot_form[0]->Setting_detail }}</h5>
 						<hr>
@@ -109,11 +155,11 @@
 						<div class="form-group row">
 						  <label for="telephone" class="col-sm-2 col-form-label">{{ __('form.telephone') }} :</label>
 						  <div class="col-sm-4">
-						    <input type="text" class="form-control" id="telephone" placeholder="{{ __('form.telephone') }}" name="telephone" required>
+						    <input type="number" class="form-control" id="telephone" placeholder="{{ __('form.telephone') }}" name="telephone" required>
 						  </div>
 						  <label for="email" class="col-sm-2 col-form-label">{{ __('form.email') }} :</label>
 						  <div class="col-sm-4">
-						    <input type="text" class="form-control" id="email" placeholder="{{ __('form.email') }}" name="email" required >
+						    <input type="email" class="form-control" id="email" placeholder="{{ __('form.email') }}" name="email" required >
 						  </div>						    
 						</div>						
 					  	<br>						

@@ -23,5 +23,6 @@ return [
     'email' => 'Email address',
     'notfound' => 'The page was not found.',
     'requiredradio' => 'Please select one of these options.',
+    'rating' => 'Use of conference room',
 
 ];

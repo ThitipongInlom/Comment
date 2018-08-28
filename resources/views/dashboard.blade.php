@@ -118,7 +118,7 @@
         <tbody>
             @foreach ($create_link as $link)
             <tr align="center">
-                <td>{{ $link->link_group_name }}</td>
+                <td align="left">{{ $link->link_group_name }}</td>
                 <td>{{ $link->link_gust_in }}</td>
                 <td>{{ date('d-m-Y', strtotime($link->link_staying_from)) }}</td>
                 <td align="left">
@@ -190,6 +190,7 @@
     $(".spinner").hide();
     $(".bodydata").fadeIn(400);          
     $('#example').DataTable({
+    "ordering": false,
     "responsive": "true",  
     "aLengthMenu": [[ 5, 10, -1], [ "5", "10", "ทั้งหมด"]],
     "language": {
@@ -215,8 +216,7 @@
     { "targets": 4 },
     { "targets": 5 },
     { "orderable": "false"}
-    ],  
-    "order":[[2,'desc']],     
+    ],     
     });
     });
     var onopenview = function onopenview(e) {

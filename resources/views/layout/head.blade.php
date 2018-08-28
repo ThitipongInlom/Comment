@@ -17,6 +17,7 @@
                       <li class="nav-item active">
                         <a class="nav-link" href="{{ url('/Create_Link') }}">Create Link <span class="sr-only">(current)</span></a>
                       </li>
+                      @if (Session::has('Login'))
                       @if (Session::get('Login.0')->status == '0')
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -29,7 +30,10 @@
                           <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                       </li>  
-                      @endif                    
+                      @endif
+                      @else
+                      <script>window.location = "{{ url('/Admin') }}";</script>
+                      @endif        
                     </ul>                
                     <a href="{{ url('/Logout') }}">
                     <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="bottom" title="ก็อปปี้ข้อมูล">Logout</button>

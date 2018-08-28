@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2018 at 04:06 PM
+-- Generation Time: Aug 28, 2018 at 11:02 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -85,20 +85,24 @@ CREATE TABLE `comment_detail` (
   `lastname` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `telephone` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Today` datetime NOT NULL
+  `Today` datetime NOT NULL,
+  `rating` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `comment_detail`
 --
 
-INSERT INTO `comment_detail` (`comment_id`, `encode`, `num_save`, `token_save`, `radio11`, `comment11`, `radio12`, `comment12`, `radio13`, `comment13`, `radio21`, `comment21`, `radio22`, `comment22`, `radio23`, `comment23`, `radio24`, `comment24`, `radio31`, `comment31`, `radio310`, `comment310`, `radio311`, `comment311`, `radio312`, `comment312`, `radio32`, `comment32`, `radio33`, `comment33`, `radio34`, `comment34`, `radio35`, `comment35`, `radio36`, `comment36`, `radio37`, `comment37`, `radio38`, `comment38`, `radio39`, `comment39`, `radio41`, `comment41`, `radio42`, `comment42`, `radio51`, `comment51`, `radio52`, `comment52`, `radio53`, `comment53`, `firstname`, `lastname`, `telephone`, `email`, `Today`) VALUES
-(1, '4250GAAA', '1', 'J2BQvK5KF5aNTmBku2kFSaI90IU74D31RAqTg7IE', 'Yes', 'TEST Comment', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Thitipong', 'Inlom', '0864633160', 'ingnice007@gmail.com', '2018-08-23 09:57:50'),
-(2, '4250GAAA', '2', 'xIKzJ3G1zvgWlerKKW9Cg2FPoxF5nMLKfrjTV3Do', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'test', 'test', '0864633160', 'ingnice007@gmail.com', '2018-08-24 13:08:05'),
-(3, '4250GAAA', '3', 'xIKzJ3G1zvgWlerKKW9Cg2FPoxF5nMLKfrjTV3Do', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Thitipong', 'Inliom', '0864633160', 'ingnice007@gmail.com', '2018-08-24 13:12:04'),
-(4, 'Thitipong_Inlom', '1', 'xIKzJ3G1zvgWlerKKW9Cg2FPoxF5nMLKfrjTV3Do', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'ฐิติพงษ์', 'อินลม', '+66852884978', 'ingnice009@hotmail.com', '2018-08-24 13:12:48'),
-(5, 'Thanachart', '1', 'GQq1feGCWZiRrXLBoFhSR8rEUjSCHVySIgiJGY02', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'test', 'test', 'tt', 't', '2018-08-25 11:13:36'),
-(6, 'Thitipong_Inlom', '2', 'rZ8W0s0Tl22UNDXOkCdDveelUuO3WFnNBCZyJ0Xb', 'Yes', '11', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', '12', '123', '21', '123', '2018-08-25 14:59:47');
+INSERT INTO `comment_detail` (`comment_id`, `encode`, `num_save`, `token_save`, `radio11`, `comment11`, `radio12`, `comment12`, `radio13`, `comment13`, `radio21`, `comment21`, `radio22`, `comment22`, `radio23`, `comment23`, `radio24`, `comment24`, `radio31`, `comment31`, `radio310`, `comment310`, `radio311`, `comment311`, `radio312`, `comment312`, `radio32`, `comment32`, `radio33`, `comment33`, `radio34`, `comment34`, `radio35`, `comment35`, `radio36`, `comment36`, `radio37`, `comment37`, `radio38`, `comment38`, `radio39`, `comment39`, `radio41`, `comment41`, `radio42`, `comment42`, `radio51`, `comment51`, `radio52`, `comment52`, `radio53`, `comment53`, `firstname`, `lastname`, `telephone`, `email`, `Today`, `rating`) VALUES
+(1, '4250GAAA', '1', 'J2BQvK5KF5aNTmBku2kFSaI90IU74D31RAqTg7IE', 'Yes', 'TEST Comment', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Thitipong', 'Inlom', '0864633160', 'ingnice007@gmail.com', '2018-08-23 09:57:50', ''),
+(2, '4250GAAA', '2', 'xIKzJ3G1zvgWlerKKW9Cg2FPoxF5nMLKfrjTV3Do', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'test', 'test', '0864633160', 'ingnice007@gmail.com', '2018-08-24 13:08:05', ''),
+(3, '4250GAAA', '3', 'xIKzJ3G1zvgWlerKKW9Cg2FPoxF5nMLKfrjTV3Do', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Thitipong', 'Inliom', '0864633160', 'ingnice007@gmail.com', '2018-08-24 13:12:04', ''),
+(4, 'Thitipong_Inlom', '1', 'xIKzJ3G1zvgWlerKKW9Cg2FPoxF5nMLKfrjTV3Do', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'ฐิติพงษ์', 'อินลม', '+66852884978', 'ingnice009@hotmail.com', '2018-08-24 13:12:48', ''),
+(5, 'Thanachart', '1', 'GQq1feGCWZiRrXLBoFhSR8rEUjSCHVySIgiJGY02', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'Yes', '1', 'test', 'test', 'tt', 't', '2018-08-25 11:13:36', ''),
+(6, 'Thitipong_Inlom', '2', 'rZ8W0s0Tl22UNDXOkCdDveelUuO3WFnNBCZyJ0Xb', 'Yes', '11', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'Yes', '', 'Yes', '', 'Yes', '', '12', '123', '21', '123', '2018-08-25 14:59:47', ''),
+(7, 'test4', '1', 'X0tHsMom3jX8qMZcyX8qfMWawvXJtBSCowcpxCx3', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'No', '', 'No', '', 'zxc', 'zxc', 'zxc', 'nice@gmail', '2018-08-28 11:20:08', ''),
+(8, 'test4', '2', 'X0tHsMom3jX8qMZcyX8qfMWawvXJtBSCowcpxCx3', 'No', '', 'No', '', 'No', '', 'No', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'Yes', '', 'No', '', 'Yes', '', 'Yes', '', 'No', '', 'No', '', 'No', '', 'zxc', 'zxc', 'zxc', 'nice@gmail', '2018-08-28 11:21:00', ''),
+(9, 'AIA', '1', 'otMUeBjVkKNepESyfPFMr6t9xUH5jtZ2PCAONR3s', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'Yes', '', 'TEST', 'TEST', '0864633160', 'ingnice007@gmail.com', '2018-08-28 15:52:19', '4');
 
 -- --------------------------------------------------------
 
@@ -116,21 +120,23 @@ CREATE TABLE `create_link` (
   `link_encode` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `link_gust_in` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `link_en` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `link_th` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `link_th` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `create_day` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `create_link`
 --
 
-INSERT INTO `create_link` (`link_id`, `link_create`, `link_room`, `link_group_name`, `link_staying_from`, `link_staying_to`, `link_encode`, `link_gust_in`, `link_en`, `link_th`) VALUES
-(1, '2018-08-10', 'Fidella', 'Nice', '2018-08-09', '2018-08-10', '4250GAAA', '200', '/en/4250GAAA', '/th/4250GAAA'),
-(2, '2018-08-10', 'Fidella', 'Thitipong Inlom', '2018-08-10', '2018-08-11', 'Thitipong_Inlom', '300', '/en/Thitipong_Inlom', '/th/Thitipong_Inlom'),
-(3, '2018-08-23', 'Fidella', 'test1', '2018-08-26', '2018-08-28', 'test1', '30', '/en/test1', '/th/test1'),
-(4, '2018-08-23', 'Fidella', 'Thanachart', '2018-08-26', '2018-08-27', 'Thanachart', '50', '/en/Thanachart', '/th/Thanachart'),
-(5, '2018-08-25', 'Fidella', 'Test2', '2018-08-25', '2018-08-26', 'Test2', '10', '/en/Test2', '/th/Test2'),
-(6, '2018-08-25', 'Fidella', 'Test3', '2018-08-25', '2018-08-26', 'Test3', '10', '/en/Test3', '/th/Test3'),
-(8, '2018-08-25', 'Fidella', 'test4', '2018-08-25', '2018-08-26', 'test4', 'test4', '/en/test4', '/th/test4');
+INSERT INTO `create_link` (`link_id`, `link_create`, `link_room`, `link_group_name`, `link_staying_from`, `link_staying_to`, `link_encode`, `link_gust_in`, `link_en`, `link_th`, `create_day`) VALUES
+(1, '2018-08-10', 'Fidella', 'Nice', '2018-08-09', '2018-08-10', '4250GAAA', '200', '/en/4250GAAA', '/th/4250GAAA', '2018-08-20 00:00:00'),
+(2, '2018-08-10', 'Fidella', 'Thitipong Inlom', '2018-08-10', '2018-08-11', 'Thitipong_Inlom', '300', '/en/Thitipong_Inlom', '/th/Thitipong_Inlom', '2018-08-21 00:00:00'),
+(3, '2018-08-23', 'Fidella', 'test1', '2018-08-26', '2018-08-28', 'test1', '30', '/en/test1', '/th/test1', '2018-08-22 00:00:00'),
+(4, '2018-08-23', 'Fidella', 'Thanachart', '2018-08-26', '2018-08-27', 'Thanachart', '50', '/en/Thanachart', '/th/Thanachart', '2018-08-24 00:00:00'),
+(5, '2018-08-25', 'Fidella', 'Test2', '2018-08-25', '2018-08-26', 'Test2', '10', '/en/Test2', '/th/Test2', '2018-08-25 00:00:00'),
+(6, '2018-08-25', 'Fidella', 'Test3', '2018-08-25', '2018-08-26', 'Test3', '10', '/en/Test3', '/th/Test3', '2018-08-26 00:00:00'),
+(8, '2018-08-25', 'Fidella', 'test4', '2018-08-25', '2018-08-26', 'test4', 'test4', '/en/test4', '/th/test4', '2018-08-27 00:00:00'),
+(9, '2018-08-28', 'Fauna', 'AIA', '2018-08-28', '2018-08-30', 'AIA', '20', '/en/AIA', '/th/AIA', '2018-08-28 11:27:35');
 
 -- --------------------------------------------------------
 
@@ -300,8 +306,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Thitipong Inlom', 'ingnice007@gmail.com', 'nice', '$2y$10$V8OnXIkxvtKvIXGHPq9hIep0uWCURTQAMxa.urGSDFtpr.YqkMIBy', '0', 'YhWG6WZSz6GU54AFClKgl6Q3y5hQ3JiENHPaqVTzhhOwKHBVP9KRbxIArVmH', '2018-08-18 09:16:08', '2018-08-27 20:54:12'),
-(2, 'staff', '-', 'staff', '$2y$10$q2W.JJ4v7bpBB9jf4Q3ck.XnTaDK7os4MpKWsNwiY2zs69J72iw5m', '1', 'cx4bgPg9SuDP1kCIaESdVJLqZ4shTGONJdEL9neV1DV8CttPP6MfH8ML1XAD', '2018-08-27 20:52:21', '2018-08-27 20:52:32');
+(1, 'Thitipong Inlom', 'ingnice007@gmail.com', 'nice', '$2y$10$V8OnXIkxvtKvIXGHPq9hIep0uWCURTQAMxa.urGSDFtpr.YqkMIBy', '0', 'RAfYZxQ8cQMwPa166iY0fkgZI83PgJxTkg1tWPrUbD0bN7eTQh9nw8nmMDL0', '2018-08-18 09:16:08', '2018-08-28 15:22:50'),
+(2, 'staff', '-', 'staff', '$2y$10$q2W.JJ4v7bpBB9jf4Q3ck.XnTaDK7os4MpKWsNwiY2zs69J72iw5m', '1', 'A6TBPWdaaxBDyO5yCu7znk8WR3AU406qYw8mmgSWeFDVksX4gCfgljQfoqIi', '2018-08-27 20:52:21', '2018-08-28 14:47:42');
 
 --
 -- Indexes for dumped tables
@@ -357,13 +363,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comment_detail`
 --
 ALTER TABLE `comment_detail`
-  MODIFY `comment_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `comment_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `create_link`
 --
 ALTER TABLE `create_link`
-  MODIFY `link_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `link_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `head_query`

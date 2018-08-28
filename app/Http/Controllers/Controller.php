@@ -56,7 +56,8 @@ class Controller extends BaseController
         'num_save'   => $recountdata,
         'encode'     => $_POST['encode'],
         'token_save' => $_POST['_token'],
-        'Today'      => $today
+        'Today'      => $today,
+        'rating'     => $_POST['rating']
         ]);
 
         // Turn id lastinsert
@@ -219,7 +220,7 @@ class Controller extends BaseController
         }
 
         // Go Page New Error
-        return redirect('Star');
+        return redirect('http://www.thezignhotel.com/');
 
     }
 

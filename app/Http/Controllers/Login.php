@@ -46,7 +46,7 @@ class Login extends Controller
 
     public function Dashboard()
     {
-        $create_link = DB::select("select * from create_link");
+        $create_link = DB::select("select * from create_link order by create_day DESC");
         $CountTotal = DB::select("select COUNT(encode) AS Totalcount,encode from comment_detail group by encode");
     	return view('dashboard',[
             'create_link' => $create_link,
@@ -106,6 +106,8 @@ class Login extends Controller
         $restayto = str_replace('/', '-', $stayto);
         $resultstayto  = date('Y-m-d', strtotime($restayto));
         $today = date("Y-m-d");
+        date_default_timezone_set("Asia/Bangkok");
+        $today    = now();         
         DB::table('create_link')->insert(
             [
             'link_create' => $today, 
@@ -116,7 +118,8 @@ class Login extends Controller
             'link_staying_to' => $resultstayto,
             'link_encode' => $groupname,
             'link_en' => '/en'.'/'.$groupname,
-            'link_th' => '/th'.'/'.$groupname
+            'link_th' => '/th'.'/'.$groupname,
+            'create_day' => $today
         ]
         );  
         return redirect('Dashboard');      

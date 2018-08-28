@@ -51,12 +51,10 @@
 					    <div class="col-md-12" align="center">
 					    <label class="col-form-label"><h5><b>Group:</b> {{ $grop[0]->link_group_name }}</h5></label>
 					    <br>
-					    <label class="col-form-label"><h5><b>From:</b> {{ date('d-m-Y', strtotime($grop[0]->link_staying_from)) }} | <b>To:</b> {{ date('d-m-Y', strtotime($grop[0]->link_staying_to)) }}</h5></label>
+					    <label class="col-form-label"><h5><b>From:</b> {{ date('d-m-Y', strtotime($grop[0]->link_staying_from)) }} || <b>To:</b> {{ date('d-m-Y', strtotime($grop[0]->link_staying_to)) }}</h5></label>
 					    <br>
-					    <label class="col-form-label"><h5><b>Name:</b> {{ $Data_view[0]->firstname }}  {{ $Data_view[0]->lastname }}</h5></label>
-					    <br>
-					    <label class="col-form-label"><h5><b>Email:</b> {{ $Data_view[0]->email }}</h5></label>
-					    <br>
+					    <label class="col-form-label"><h5><b>Name:</b> {{ $Data_view[0]->firstname }}  {{ $Data_view[0]->lastname }}</h5></label> ||
+					    <label class="col-form-label"><h5><b>Email:</b> {{ $Data_view[0]->email }}</h5></label> ||
 					    <label class="col-form-label"><h5><b>Telephone:</b> {{ $Data_view[0]->telephone }}</h5></label>
 					    <br>
 					    <button class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="ย้อนกลับ" onclick="window.location='{{ url('/') }}/{{ $locale }}/{{ $encode }}/{{ $backnum }}'" @if ($Backpage == '0') {{ 'disabled' }} @endif><i class="fas fa-arrow-left"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;
