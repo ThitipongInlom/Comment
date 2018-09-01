@@ -21,7 +21,14 @@ class Login extends Controller
     	$password = Input::post('password');
 		if (Auth::attempt(['username' => $username, 'password' => $password])) {
                 $users_data = DB::table('users')->select('*')->where('username', $username)->get();
-				Session::put('Login', $users_data);
+                $arrayData = array(
+                    'name' => $users_data[0]->name,
+                    'email'=> $users_data[0]->email,
+                    'username'=> $users_data[0]->username,
+                    'status'=> $users_data[0]->status,
+                    'created_at'=> $users_data[0]->created_at,
+                    'updated_at' => $users_data[0]->updated_at);
+                Session::put('Login', $arrayData);
                 date_default_timezone_set("Asia/Bangkok");
                 $today = now();                
                 DB::table('users')
@@ -31,7 +38,14 @@ class Login extends Controller
 		}
 		elseif (Auth::attempt(['email'=> $username, 'password' => $password])) {
 				$users_data = DB::table('users')->select('*')->where('username', $username)->get();
-				Session::put('Login', $users_data);
+                $arrayData = array(
+                    'name' => $users_data[0]->name,
+                    'email'=> $users_data[0]->email,
+                    'username'=> $users_data[0]->username,
+                    'status'=> $users_data[0]->status,
+                    'created_at'=> $users_data[0]->created_at,
+                    'updated_at' => $users_data[0]->updated_at);
+                Session::put('Login', $arrayData);
                 date_default_timezone_set("Asia/Bangkok");
                 $today = now();                
                 DB::table('users')

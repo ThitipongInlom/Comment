@@ -109,8 +109,8 @@
                 <th>Grop Name</th>
                 <th>จำนวน</th>
                 <th>วันที่เข้าพัก</th>
-                <th>ลิ้งค์ ภาษาไทย</th>
-                <th>ลิ้งค์ ภาษาอังกฤษ</th>
+                <th>ลิ้งค์ ภายนอก</th>
+                <th>ลิ้งค์ ภายใน</th>
                 <th>ตอบกลับ</th>
                 <th>ตัวช่วย</th>
             </tr>
@@ -122,15 +122,11 @@
                 <td>{{ $link->link_gust_in }}</td>
                 <td>{{ date('d-m-Y', strtotime($link->link_staying_from)) }}</td>
                 <td align="left">
-                    <!-- Link TH -->
-                    <button class="btn btn-sm btn-success" linkto="{{ url('') }}{{ $link->link_th }}" onclick="onopenview(this);" data-toggle="tooltip" data-placement="top" title="เปิดลิ้งค์ ภาษาไทย"><i class="fas fa-external-link-alt"></i></button>
-                    <!--  Copy TH-->
-                    <button class="btn btn-copy btn-sm btn-info" onclick="Copy(this);" data-toggle="tooltip" data-placement="top" title="คัดลอกลิ้งค์" data-clipboard-text="{{ url('') }}{{ $link->link_th }}"><i class="far fa-copy"></i></button>
+                    <button class="btn btn-sm btn-success" linkto="http://58.82.151.243/Comment{{ $link->link_en }}" onclick="onopenview(this);" data-toggle="tooltip" data-placement="top" title="เปิดลิ้งค์ ภาษาไทย"><i class="fas fa-external-link-alt"></i></button>
+                    <button class="btn btn-copy btn-sm btn-info" onclick="Copy(this);" data-toggle="tooltip" data-placement="top" title="คัดลอกลิ้งค์" data-clipboard-text="http://58.82.151.243/Comment{{ $link->link_en }}"><i class="far fa-copy"></i></button>
                 </td>
                 <td align="left">
-                    <!-- Link EN -->
                     <button class="btn btn-sm btn-success" linkto="{{ url('') }}{{ $link->link_en }}" onclick="onopenview(this);" data-toggle="tooltip" data-placement="top" title="เปิดลิ้งค์ ภาษาอังกฤษ"><i class="fas fa-external-link-alt"></i></button>
-                    <!--  Copy EN -->
                     <button class="btn btn-copy btn-sm btn-info" onclick="Copy(this);" data-toggle="tooltip" data-placement="top" title="คัดลอกลิ้งค์" data-clipboard-text="{{ url('') }}{{ $link->link_en }}"><i class="far fa-copy"></i></button>                    
                 </td>
                 <td>
