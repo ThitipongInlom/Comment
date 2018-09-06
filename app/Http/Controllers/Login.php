@@ -133,10 +133,20 @@ class Login extends Controller
             'link_encode' => $groupname,
             'link_en' => '/en'.'/'.$groupname,
             'link_th' => '/th'.'/'.$groupname,
-            'create_day' => $today
+            'create_day' => $today,
+            'link_status' => '0'
         ]
         );  
         return redirect('Dashboard');      
+    }
+
+    public function SwitchStatus()
+    {
+        $status = Input::post('recheckinput');
+        $linkid = Input::post('linkid');
+        DB::table('create_link')
+                ->where('link_id', $linkid)
+                ->update(['link_status' => $status]);
     }
 
     public function Logout()

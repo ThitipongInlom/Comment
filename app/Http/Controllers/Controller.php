@@ -26,6 +26,7 @@ class Controller extends BaseController
         $cardbody    = DB::select("select * from sup_query where lang = '$land' order by sup_num ASC");
         $grop        = DB::select("select * from create_link where link_encode = '$encode'");
         if ($grop != null) {
+        if ($grop[0]->link_status == '0') {
         return view('welcome', [
             'title_web' => $title_web,
             'head_form' => $head_form,
@@ -33,7 +34,10 @@ class Controller extends BaseController
             'cardbody'  => $cardbody,
             'foot_form' => $foot_form,
             'grop'      => $grop,
-            'encode'    => $encode]);  
+            'encode'    => $encode]);
+        }else{
+        return redirect('http://www.thezignhotel.com/');   
+        }
         }else{
         return redirect('404');   
         }  
