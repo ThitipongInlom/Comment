@@ -36,15 +36,15 @@ class Controller extends BaseController
             'grop'      => $grop,
             'encode'    => $encode]);
         }else{
-        return redirect('http://www.thezignhotel.com/');   
+        return redirect('http://www.thezignhotel.com/');
         }
-        }else{
-        return redirect('404');   
-        }  
         }else{
         return redirect('404');
         }
-    }       
+        }else{
+        return redirect('404');
+        }
+    }
 
     public function Save_Data()
     {
@@ -54,7 +54,7 @@ class Controller extends BaseController
         // Count Grop And Plus 1
         $countdata = DB::table('comment_detail')->where('encode', $_POST['encode'])->count();
         $recountdata = $countdata+1;
-         
+
         // Insert Data
         DB::table('comment_detail')->insert([
         'num_save'   => $recountdata,
@@ -95,13 +95,15 @@ class Controller extends BaseController
             'comment51'  => $_POST['comment51'],
             'comment52'  => $_POST['comment52'],
             'comment53'  => $_POST['comment53'],
+            'comment61'  => $_POST['comment61'],
+            'comment62'  => $_POST['comment62'],
             'firstname'  => $_POST['firstname'],
             'lastname'   => $_POST['lastname'],
             'telephone'  => $_POST['telephone'],
             'email'      => $_POST['email'],
             ]);
 
-        // Update Radio    
+        // Update Radio
         if (isset($_POST['radio11'])) {
             DB::table('comment_detail')
             ->where('comment_id', $id)
@@ -221,6 +223,16 @@ class Controller extends BaseController
             DB::table('comment_detail')
             ->where('comment_id', $id)
             ->update(['radio53'  => $_POST['radio53']]);
+        }
+        if (isset($_POST['radio61'])) {
+            DB::table('comment_detail')
+            ->where('comment_id', $id)
+            ->update(['radio61'  => $_POST['radio61']]);
+        }
+        if (isset($_POST['radio62'])) {
+            DB::table('comment_detail')
+            ->where('comment_id', $id)
+            ->update(['radio62'  => $_POST['radio62']]);
         }
 
         // Go Page New Error

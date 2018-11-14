@@ -22,19 +22,19 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     </head>
     <body style="background-color: rgb(239, 234, 225);">
-		<div class="row"> 	
+		<div class="row">
     	<div class="containerimg">
     	<div class="overlay">{{ $title_web[0]->Setting_detail }}</div>
     	<div  align="center" class="form_data">
        		<div class="col-md-2 col-xs-2"></div>
         	<div class="col-md-8 col-xs-6">
 				<div class="card card-warning  card-outline">
-				<div class="card-header" >	
+				<div class="card-header" >
 				  <ul class="nav nav-tabs card-header-tabs pull-xs-left">
 				      <li class="nav-item col-xs-12">
 				        <a class="nav-link active"><h4 class="animated lightSpeedIn box-title card-title" align="left"><b>{{ $head_form[0]->Setting_detail }}</b></h4></a>
 				      </li>
-				  </ul>				  				
+				  </ul>
 				  <div class="card-tools col-xs-12">
 					<select class="custom-select" onchange="land(this);">
 					  <option value="en" @if ( app()->getLocale()  == 'en')
@@ -44,7 +44,7 @@
 					  	{{ 'selected' }}
 					  @endif>TH</option>
 					</select>
-                  </div>				  
+                  </div>
 				  </div>
 					  <div class="card-body">
 						<div class="form-group row">
@@ -59,8 +59,8 @@
 					    <br>
 					    <button class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="ย้อนกลับ" onclick="window.location='{{ url('/') }}/{{ $locale }}/{{ $encode }}/{{ $backnum }}'" @if ($Backpage == '0') {{ 'disabled' }} @endif><i class="fas fa-arrow-left"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;
 					    <button class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="ถัดไป" onclick="window.location='{{ url('/') }}/{{ $locale }}/{{ $encode }}/{{ $nextnum }}'" @if ($Nextpage == '0') {{ 'disabled' }} @endif><i class="fas fa-arrow-right"></i></button>
-					    </div>												
-						</div>					 	
+					    </div>
+						</div>
 					  	@foreach ($cardhead as $card)
 					  	<!-- Start Card FQA -->
 						<div class="card card-outline">
@@ -77,25 +77,25 @@
 			                		<td align="right" valign="baseline"><h4>{{ __('form.yes') }}</h4></td>
 			                		<td align="right">
 						                <div class="icheck-primary icheck-inline">
-						                	<input type="radio" class="radiocheck" id="radio{{ $body->id.$body->head_id.$body->head_id }}" name="radio{{ $body->head_id.$body->sup_num }}" value="Yes" 
+						                	<input type="radio" class="radiocheck" id="radio{{ $body->id.$body->head_id.$body->head_id }}" name="radio{{ $body->head_id.$body->sup_num }}" value="Yes"
 						                	<?php 	$data = 'radio'.$body->head_id.$body->sup_num; $new_Data_view = $Data_view[0];
 						                	if($new_Data_view->$data == 'Yes'){
 						                		echo 'checked';
 						                	}
-						                	?> >
+						                	?> disabled>
 						                	<label for="radio{{ $body->id.$body->head_id.$body->head_id }}"></label>
-						                </div>			                			
+						                </div>
 			                		</td>
 			                		<td>
 						                <div class="icheck-primary icheck-inline">
-						                	<input type="radio" class="radiocheck" id="radio{{ $body->id.$body->head_id.$body->head_id+1 }}" name="radio{{ $body->head_id.$body->sup_num }}" value="No" 
+						                	<input type="radio" class="radiocheck" id="radio{{ $body->id.$body->head_id.$body->head_id+1 }}" name="radio{{ $body->head_id.$body->sup_num }}" value="No"
 						                	<?php 	$data = 'radio'.$body->head_id.$body->sup_num; $new_Data_view = $Data_view[0];
 						                	if($new_Data_view->$data == 'No'){
 						                		echo 'checked';
 						                	}
-						                	?>>
+						                	?> disabled>
 						                	<label for="radio{{ $body->id.$body->head_id.$body->head_id+1 }}"></label>
-						                </div>			                			
+						                </div>
 			                		</td>
 			                		<td align="left" valign="baseline"><h4>{{ __('form.no') }}</h4></td>
 			                	</tr>
@@ -110,11 +110,11 @@
 			                <br>
 			                <!-- End Body -->
 			                @endif
-			                @endforeach	
+			                @endforeach
 			              </div>
-			            </div>	
-			            <!-- End Card FQA -->    					
-						@endforeach	
+			            </div>
+			            <!-- End Card FQA -->
+						@endforeach
 						<hr>
 						<h5>{{ $foot_form[0]->Setting_detail }}</h5>
 						<hr>
@@ -122,7 +122,7 @@
 				</div>
         	</div>
         	</div>
-        </div>	
+        </div>
     </body>
     <!-- Change language -->
     <script type="text/javascript">
@@ -146,7 +146,7 @@
 		    elements[i].oninput = function(e) {
 		        e.target.setCustomValidity("");
 		    };
-		}   	
+		}
     </script>
     <!-- All Js -->
     <script type="text/javascript" src="{{ url('js/app.js') }}"></script>

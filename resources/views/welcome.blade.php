@@ -18,19 +18,19 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     </head>
     <body style="background-color: rgb(239, 234, 225);">
-		<div class="row"> 	
+		<div class="row">
     	<div class="containerimg">
     	<div class="overlay">{{ $title_web[0]->Setting_detail }}</div>
     	<div  align="center" class="form_data">
        		<div class="col-md-2 col-xs-2"></div>
         	<div class="col-md-8 col-xs-6">
 				<div class="card card-warning  card-outline">
-				<div class="card-header" >	
+				<div class="card-header" >
 				  <ul class="nav nav-tabs card-header-tabs pull-xs-left">
 				      <li class="nav-item col-xs-12">
 				        <a class="nav-link active"><h4 class="animated lightSpeedIn box-title card-title" align="left"><b>{{ $head_form[0]->Setting_detail }}</b></h4></a>
 				      </li>
-				  </ul>				  				
+				  </ul>
 				  <div class="card-tools col-xs-12">
 					<select class="custom-select" onchange="land(this);">
 					  <option value="en" @if ( app()->getLocale()  == 'en')
@@ -40,7 +40,7 @@
 					  	{{ 'selected' }}
 					  @endif>TH</option>
 					</select>
-                  </div>				  
+                  </div>
 				  </div>
 				  	  <form action="{{ url('/Save_Data') }}" method="POST" accept-charset="utf-8">
 				  	  <input type="hidden" name="encode" value="{{ $encode }}">
@@ -51,9 +51,9 @@
 					    <label class="col-form-label"><h5><b>Group:</b> {{ $grop[0]->link_group_name }}  </h5></label>
 					    <br>
 					    <label class="col-form-label"><h5><b>From:</b> {{ date('d-m-Y', strtotime($grop[0]->link_staying_from)) }} || <b>To:</b> {{ date('d-m-Y', strtotime($grop[0]->link_staying_to)) }}</h5></label>
-					    </div>												
+					    </div>
 						</div>
-											  	
+
 					  	@foreach ($cardhead as $card)
 					  	<!-- Start Card FQA -->
 						<div class="card card-outline">
@@ -72,13 +72,13 @@
 						                <div class="icheck-primary icheck-inline">
 						                	<input type="radio" class="radiocheck" id="radio{{ $body->id.$body->head_id.$body->head_id }}" name="radio{{ $body->head_id.$body->sup_num }}" value="Yes" required>
 						                	<label for="radio{{ $body->id.$body->head_id.$body->head_id }}"></label>
-						                </div>			                			
+						                </div>
 			                		</td>
 			                		<td>
 						                <div class="icheck-primary icheck-inline">
 						                	<input type="radio" class="radiocheck" id="radio{{ $body->id.$body->head_id.$body->head_id+1 }}" name="radio{{ $body->head_id.$body->sup_num }}" value="No" required>
 						                	<label for="radio{{ $body->id.$body->head_id.$body->head_id+1 }}"></label>
-						                </div>			                			
+						                </div>
 			                		</td>
 			                		<td align="left" valign="baseline"><h4>{{ __('form.no') }}</h4></td>
 			                	</tr>
@@ -88,10 +88,10 @@
 			                <br>
 			                <!-- End Body -->
 			                @endif
-			                @endforeach	
+			                @endforeach
 			              </div>
-			            </div>	
-			            <!-- End Card FQA -->    					
+			            </div>
+			            <!-- End Card FQA -->
 						@endforeach
 						<div class="card card-danger">
 			              <div class="card-header">
@@ -99,16 +99,16 @@
 			              </div>
 			              <div class="card-body">
 			              	<style type="text/css">
-			              	.starrating > input {display: none;} 	
+			              	.starrating > input {display: none;}
 							.starrating > label
 							{
 							  color: #222222;
-							}		
+							}
 							.starrating > input:checked ~ label
-							{ color: #ffca08 ; } 
+							{ color: #ffca08 ; }
 
 							.starrating > input:hover ~ label
-							{ color: #ffca08 ;  }							              	
+							{ color: #ffca08 ;  }
 			              	</style>
 			              	<div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
 			              	<!-- 4 Star -->
@@ -138,7 +138,7 @@
 			            	</label>
 			            	</div>
 			              </div>
-			            </div>						
+			            </div>
 						<hr>
 						<h5>{{ $foot_form[0]->Setting_detail }}</h5>
 						<hr>
@@ -150,7 +150,7 @@
 						  <label for="lastname" class="col-sm-2 col-form-label">{{ __('form.lastname') }} :</label>
 						  <div class="col-sm-4">
 						    <input type="text" class="form-control" id="lastname" placeholder="{{ __('form.lastname') }}" name="lastname" required>
-						  </div>						    
+						  </div>
 						</div>
 						<div class="form-group row">
 						  <label for="telephone" class="col-sm-2 col-form-label">{{ __('form.telephone') }} :</label>
@@ -160,9 +160,9 @@
 						  <label for="email" class="col-sm-2 col-form-label">{{ __('form.email') }} :</label>
 						  <div class="col-sm-4">
 						    <input type="email" class="form-control" id="email" placeholder="{{ __('form.email') }}" name="email" required >
-						  </div>						    
-						</div>						
-					  	<br>						
+						  </div>
+						</div>
+					  	<br>
 			            <div align="center">
 			            	<button type="submit" class="btn btn-outline-success">{{ __('form.send') }}</button>
 			            </div>
@@ -171,7 +171,7 @@
 				</div>
         	</div>
         	</div>
-        </div>	
+        </div>
     </body>
     <!-- Change language -->
     <script type="text/javascript">
@@ -195,7 +195,7 @@
 		    elements[i].oninput = function(e) {
 		        e.target.setCustomValidity("");
 		    };
-		}   	
+		}
     </script>
     <!-- All Js -->
     <script type="text/javascript" src="{{ url('js/app.js') }}"></script>

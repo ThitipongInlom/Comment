@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">	
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Admin Page</title>
         <!-- Img Setting -->
         <link rel="stylesheet" type="text/css" href="{{ url('css/set_img.css') }}">
@@ -13,14 +13,14 @@
         <!-- Icheck-2 -->
         <link rel="stylesheet" type="text/css" href="{{ url('node_modules/icheck-bootstrap/icheck-bootstrap.css') }}">
         <!-- Data Table -->
-        <link rel="stylesheet" type="text/css" href="{{ url('plugins/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.css') }}"> 
+        <link rel="stylesheet" type="text/css" href="{{ url('plugins/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url('plugins/datatables/Responsive-2.2.2/css/responsive.bootstrap4.css') }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <style type="text/css">
         .bodydata{
           display: none;
-        }       
+        }
         .spinner {
           margin: 100px auto 0;
           width: 70px;
@@ -54,14 +54,14 @@
         }
 
         @keyframes sk-bouncedelay {
-          0%, 80%, 100% { 
+          0%, 80%, 100% {
             -webkit-transform: scale(0);
             transform: scale(0);
-          } 40% { 
+          } 40% {
             -webkit-transform: scale(1.0);
             transform: scale(1.0);
           }
-        }  
+        }
         .switch {
           font-size: 1rem;
           position: relative;
@@ -172,8 +172,8 @@
         }
         .switch + .switch {
           margin-left: 1rem;
-        }                  
-        </style>        	
+        }
+        </style>
 </head>
 <body class="hold-transition login-page">
     @include('layout.head')
@@ -182,7 +182,7 @@
         <div class="bounce1"></div>
         <div class="bounce2"></div>
         <div class="bounce3"></div>
-    </div>    
+    </div>
     <div class="container bodydata">
     <div class="row">
     <div class="col-md-6">
@@ -204,7 +204,7 @@
     GO
     </div>
     </div>
-    </div>    
+    </div>
     </div>
     <div class="row">
     <div class="col-md-12">
@@ -238,16 +238,16 @@
                     <button class="btn btn-copy btn-sm btn-info" onclick="Copy(this);" data-toggle="tooltip" data-placement="top" title="คัดลอกลิ้งค์" data-clipboard-text="http://58.82.151.243/Comment{{ $link->link_en }}"><i class="far fa-copy"></i></button>
                 </td>
                 <td align="left">
-                    <button class="btn btn-sm btn-success" linkto="{{ url('') }}{{ $link->link_en }}" onclick="onopenview(this);" data-toggle="tooltip" data-placement="top" title="ลิ้งค์ ภายใน"><i class="fas fa-external-link-alt"></i></button>
-                    <button class="btn btn-copy btn-sm btn-info" onclick="Copy(this);" data-toggle="tooltip" data-placement="top" title="คัดลอกลิ้งค์" data-clipboard-text="{{ url('') }}{{ $link->link_en }}"><i class="far fa-copy"></i></button>                    
+                    <button class="btn btn-sm btn-success" linkto="{{ url('') }}{{ $link->link_th }}" onclick="onopenview(this);" data-toggle="tooltip" data-placement="top" title="ลิ้งค์ ภายใน"><i class="fas fa-external-link-alt"></i></button>
+                    <button class="btn btn-copy btn-sm btn-info" onclick="Copy(this);" data-toggle="tooltip" data-placement="top" title="คัดลอกลิ้งค์" data-clipboard-text="{{ url('') }}{{ $link->link_en }}"><i class="far fa-copy"></i></button>
                 </td>
                 <td>
                     @foreach ($CountTotal as $total)@if ($total->encode == $link->link_encode) <?php echo '<span class="badge badge-primary">'.$total->Totalcount.'</span>';  ?> @endif @endforeach
                 </td>
                 <td>
-                <div class="form-group">  
+                <div class="form-group">
                   <span class="switch switch-sm">
-                    <input type="checkbox" class="switch" onchange="Link_status(this)" linkid="{{ $link->link_id }}"id="switch-sm{{ $link->link_id }}" 
+                    <input type="checkbox" class="switch" onchange="Link_status(this)" linkid="{{ $link->link_id }}"id="switch-sm{{ $link->link_id }}"
                     @if ($link->link_status == 0)
                     {{ 'checked' }}
                     @endif>
@@ -259,13 +259,13 @@
                     <button class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="ดูข้อมูล" Gropname="{{ $link->link_encode }}" onclick="show_view(this);">View</button>
                 </td>
             </tr>
-            @endforeach 
+            @endforeach
         </tbody>
     </table>
     </div>
     </div>
-    </div>   
-    </div>   
+    </div>
+    </div>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="popup_view" tabindex="-1" role="dialog">
@@ -284,22 +284,22 @@
           </div>
         </div>
       </div>
-    </div>    
+    </div>
 </body>
   <!-- Data Table -->
   <script type="text/javascript" src="{{ url('public/plugins/datatables/datatables.js') }}"></script>
   <script type="text/javascript" src="{{ url('public/plugins/datatables/DataTables-1.10.18/js/dataTables.bootstrap4.js') }}"></script>
   <script type="text/javascript" src="{{ url('public/plugins/datatables/Responsive-2.2.2/js/responsive.bootstrap4.js') }}"></script>
-  <!-- Clipboardjs --> 
+  <!-- Clipboardjs -->
   <script type="text/javascript" src="{{ url('node_modules/clipboard/dist/clipboard.js') }}"></script>
   <!-- Use script -->
   <script type="text/javascript">
-    $(document).ready(function() { 
+    $(document).ready(function() {
     $(".spinner").hide();
-    $(".bodydata").fadeIn(400);          
+    $(".bodydata").fadeIn(400);
     $('#example').DataTable({
     "ordering": false,
-    "responsive": "true",  
+    "responsive": "true",
     "aLengthMenu": [[ 5, 10, -1], [ "5", "10", "ทั้งหมด"]],
     "language": {
     "lengthMenu":"แสดง _MENU_ แถว",
@@ -315,7 +315,7 @@
     "next": "ต่อไป",
     "previous": "ย้อนกลับ"
     },
-    }, 
+    },
     "columnDefs": [
     { "targets": 0 },
     { "targets": 1 },
@@ -325,7 +325,7 @@
     { "targets": 5 },
     { "targets": 6 },
     { "orderable": "false"}
-    ],     
+    ],
     });
     });
     var onopenview = function onopenview(e) {
@@ -333,7 +333,7 @@
         window.open(link, '_blank');
     }
     var Copy = function Copy(e) {
-    var clipboard = new ClipboardJS('.btn-copy'); 
+    var clipboard = new ClipboardJS('.btn-copy');
     }
     var show_view = function show_view(e) {
         var Gropname = $(e).attr('Gropname');
@@ -348,8 +348,8 @@
                 console.log(Table);
 
             }
-        });    
-    } 
+        });
+    }
     var Link_status = function Link_status(e) {
         var checkinput = $(e).is(":checked");
         var linkid = $(e).attr('linkid');
@@ -357,7 +357,7 @@
         if (checkinput == true) {
             var recheckinput = '0';
         }else if (checkinput == false) {
-            var recheckinput = '1'; 
+            var recheckinput = '1';
         }
         $.ajax({
             url: 'Switchstatus',
