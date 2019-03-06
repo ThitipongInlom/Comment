@@ -242,7 +242,7 @@
                     <button class="btn btn-copy btn-sm btn-info" onclick="Copy(this);" data-toggle="tooltip" data-placement="top" title="คัดลอกลิ้งค์" data-clipboard-text="{{ url('') }}{{ $link->link_en }}"><i class="far fa-copy"></i></button>
                 </td>
                 <td>
-                    @foreach ($CountTotal as $total)@if ($total->encode == $link->link_encode) <?php echo '<span class="badge badge-primary">'.$total->Totalcount.'</span>';  ?> @endif @endforeach
+                    @foreach ($CountTotal as $total)@if ($total->encode == $link->link_id) <?php echo '<span class="badge badge-primary">'.$total->Totalcount.'</span>';  ?> @endif @endforeach
                 </td>
                 <td>
                 <div class="form-group">
@@ -256,7 +256,7 @@
                 </div>
                 </td>
                 <td>
-                    <button class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="ดูข้อมูล" Gropname="{{ $link->link_encode }}" onclick="show_view(this);">View</button>
+                    <button class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="ดูข้อมูล" Gropname="{{ $link->link_id }}" onclick="show_view(this);">View</button>
                 </td>
             </tr>
             @endforeach

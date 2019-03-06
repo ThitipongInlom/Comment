@@ -121,8 +121,8 @@ class Login extends Controller
         $resultstayto  = date('Y-m-d', strtotime($restayto));
         $today = date("Y-m-d");
         date_default_timezone_set("Asia/Bangkok");
-        $today    = now();         
-        DB::table('create_link')->insert(
+        $today = now();         
+        $Getid = DB::table('create_link')->insertGetId(
             [
             'link_create' => $today, 
             'link_room' => $room,
@@ -131,12 +131,15 @@ class Login extends Controller
             'link_staying_from' => $resultstayin,
             'link_staying_to' => $resultstayto,
             'link_encode' => $groupname,
-            'link_en' => '/en'.'/'.$groupname,
-            'link_th' => '/th'.'/'.$groupname,
             'create_day' => $today,
             'link_status' => '0'
-        ]
-        );  
+        ]); 
+        DB::table('create_link')
+            ->where('link_id', $Getid)
+            ->update([
+                'link_en' => '/en'.'/'.$Getid,
+                'link_th' => '/th'.'/'.$Getid,
+            ]); 
         return redirect('Dashboard');      
     }
 

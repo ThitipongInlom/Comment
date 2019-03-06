@@ -24,7 +24,7 @@ class Controller extends BaseController
         $foot_form   = DB::select("select * from setting where Setting_head = 'foot_form' and Setting_land = '$land'");
         $cardhead    = DB::select("select * from head_query where lang = '$land'");
         $cardbody    = DB::select("select * from sup_query where lang = '$land' order by sup_num ASC");
-        $grop        = DB::select("select * from create_link where link_encode = '$encode'");
+        $grop        = DB::select("select * from create_link where link_id = '$encode'");
         if ($grop != null) {
         if ($grop[0]->link_status == '0') {
         return view('welcome', [

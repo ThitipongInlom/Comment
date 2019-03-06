@@ -24,7 +24,7 @@ class View_Data extends Controller
         $foot_form   = DB::select("select * from setting where Setting_head = 'foot_form' and Setting_land = '$land'");
         $cardhead    = DB::select("select * from head_query where lang = '$land'");
         $cardbody    = DB::select("select * from sup_query where lang = '$land' order by sup_num ASC");
-        $grop        = DB::select("select * from create_link where link_encode = '$encode'");
+        $grop        = DB::select("select * from create_link where link_id = '$encode'");
 
         $Data_view = DB::table('comment_detail')->where('encode', $encode)->where('num_save', $list)->get();
         $CountData = DB::table('comment_detail')->where('encode', $encode)->where('num_save', $list)->count();
