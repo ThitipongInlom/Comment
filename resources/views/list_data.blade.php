@@ -129,9 +129,9 @@
     	var land = function land(e) {
     		var value = e.value;
     		if (value == 'en') {
-    			var urlsend = "{{ url('/en') }}/{{ $grop[0]->link_encode }}/{{ $List_View }}";
+    			var urlsend = "{{ url('/en') }}/{{ $grop[0]->link_id }}/{{ $List_View }}";
     		}else if (value == 'th') {
-    			var urlsend = "{{ url('/th') }}/{{ $grop[0]->link_encode }}/{{ $List_View }}";
+    			var urlsend = "{{ url('/th') }}/{{ $grop[0]->link_id }}/{{ $List_View }}";
     		}
     		window.location.href = urlsend;
     	}

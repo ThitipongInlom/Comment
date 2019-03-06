@@ -184,7 +184,7 @@
                 $(".bodydata").fadeIn(400);               
                 $("#tableuser").DataTable({
                 "responsive": "true",  
-                "aLengthMenu": [[ 5, 10, -1], [ "5", "10", "ทั้งหมด"]],
+                "aLengthMenu": [[ 10, -1], [  "10", "ทั้งหมด"]],
                 "language": {
                 "lengthMenu":"แสดง _MENU_ แถว",
                 "search":"ค้นหา:",
