@@ -24,16 +24,5 @@
 ```
 <h2>ตัวอย่างโปรแกรม</h2>
 
-![alt text](https://user-images.githubusercontent.com/11131954/44297998-312d0c80-a305-11e8-8534-ebd8b549e7bb.PNG)
+<img src="https://user-images.githubusercontent.com/11131954/44297998-312d0c80-a305-11e8-8534-ebd8b549e7bb.PNG" width="23%"></img> <img src="https://user-images.githubusercontent.com/11131954/44298000-34c09380-a305-11e8-9bac-0c6cf9250cf9.PNG" width="23%"></img> <img src="https://user-images.githubusercontent.com/11131954/44298003-39854780-a305-11e8-9094-25d9f8d5a39a.PNG" width="23%"></img> <img src="https://user-images.githubusercontent.com/11131954/44616592-c045a180-a87c-11e8-864e-ddea699104cc.PNG" width="23%"></img> <img src="https://user-images.githubusercontent.com/11131954/44616595-c2a7fb80-a87c-11e8-9679-ed2642664a89.PNG" width="23%"></img> <img src="https://user-images.githubusercontent.com/11131954/44616598-c471bf00-a87c-11e8-97d6-c83a8f4619f6.PNG" width="23%"></img> <img src="https://user-images.githubusercontent.com/11131954/44616600-c63b8280-a87c-11e8-9071-49689759f009.PNG" width="23%"></img>
 
-![alt text](https://user-images.githubusercontent.com/11131954/44298000-34c09380-a305-11e8-9bac-0c6cf9250cf9.PNG)
-
-![alt text](https://user-images.githubusercontent.com/11131954/44298003-39854780-a305-11e8-9094-25d9f8d5a39a.PNG)
-
-![alt text](https://user-images.githubusercontent.com/11131954/44616592-c045a180-a87c-11e8-864e-ddea699104cc.PNG)
-
-![alt text](https://user-images.githubusercontent.com/11131954/44616595-c2a7fb80-a87c-11e8-9679-ed2642664a89.PNG)
-
-![alt text](https://user-images.githubusercontent.com/11131954/44616598-c471bf00-a87c-11e8-97d6-c83a8f4619f6.PNG)
-
-![alt text](https://user-images.githubusercontent.com/11131954/44616600-c63b8280-a87c-11e8-9071-49689759f009.PNG)
