@@ -1,0 +1,54 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+      - "5173:5173"
+    volumes:
+      - .:/var/www
+      - /var/www/vendor
+      - /var/www/node_modules
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: comment
+      DB_USERNAME: comment
+      DB_PASSWORD: secret
+    command: >
+      bash -c "
+        cp -n .env.example .env 2>/dev/null || true
+        php artisan key:generate --no-interaction --force
+        echo 'Waiting for MySQL...'
+        until php artisan migrate --force 2>/dev/null; do
+          sleep 2
+          echo 'Retrying migration...'
+        done
+        php artisan db:seed --force
+        php artisan serve --host=0.0.0.0 --port=8000 &
+        npm run dev -- --host 0.0.0.0 &
+        wait
+      "
+
+  db:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: comment
+      MYSQL_USER: comment
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  db_data:

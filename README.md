@@ -1,28 +1,131 @@
-# Comment
-   <h4>โปรแกรมส่งแบบสอบถามไปหาลูกค้าที่ใช้บริการโรงแรมและรับข้อเสนอแนะต่างๆของลูกค้ามาปรับปรุง </h4>
-<h2>Installation Instructions</h2>
+# Hotel Survey System
+
+ระบบแบบสอบถามสำหรับโรงแรม รองรับหลาย Hotel Profile, หลายภาษา (EN/TH) พร้อม Admin Panel
+
+## Tech Stack
+
+- **Backend:** Laravel 12 + PHP 8.3
+- **Frontend:** Vue 3 (Composition API) + Inertia.js v2
+- **Styling:** Tailwind CSS v4
+- **Database:** MySQL 8.0
+- **Infrastructure:** Docker Compose
+
+## Features
+
+- Multi Hotel Profile — แต่ละ profile มี logo, background, ข้อความ header/footer แยกกัน
+- Survey Sections & Questions — จัดการแบบ dynamic ต่อ profile, ลากจัดลำดับด้วย drag & drop
+- Survey Links — สร้างลิงก์แบบสอบถามผูกกับห้องพัก, มี slug สำหรับแชร์
+- Survey Responses — เก็บคำตอบ Yes/No + Comment + Star Rating
+- Multi-language — รองรับ EN/TH ทั้ง survey form และ validation messages
+- Admin Panel — Dashboard, จัดการ profiles, rooms, sections, questions, links, users
+
+## Project Structure
 
 ```
-+--------+----------+--------------------------+------+-----------------------------------------------------+--------------+
-| Domain | Method   | URI                      | Name | Action                                              | Middleware   |
-+--------+----------+--------------------------+------+-----------------------------------------------------+--------------+
-|        | GET|HEAD | 404                      |      | Closure                                             | web          |
-|        | GET|HEAD | Admin                    |      | Closure                                             | web          |
-|        | GET|HEAD | Create_Link              |      | App\Http\Controllers\Login@Create_Link              | web          |
-|        | GET|HEAD | Dashboard                |      | App\Http\Controllers\Login@Dashboard                | web          |
-|        | POST     | Do_create_link           |      | App\Http\Controllers\Login@Do_create_link           | web          |
-|        | POST     | Do_login                 |      | App\Http\Controllers\Login@Do_login                 | web          |
-|        | GET|HEAD | Logout                   |      | App\Http\Controllers\Login@Logout                   | web          |
-|        | POST     | Save_Data                |      | App\Http\Controllers\Controller@Save_Data           | web          |
-|        | GET|HEAD | Star                     |      | App\Http\Controllers\Login@Star                     | web          |
-|        | GET|HEAD | Table_View               |      | App\Http\Controllers\View_Data@Table_View           | web          |
-|        | GET|HEAD | View_Information         |      | App\Http\Controllers\Controller@View_Information    | web          |
-|        | GET|HEAD | api/user                 |      | Closure                                             | api,auth:api |
-|        | GET|HEAD | {locale}/{encode}        |      | App\Http\Controllers\Controller@Show_welcome_encode | web          |
-|        | GET|HEAD | {locale}/{encode}/{list} |      | App\Http\Controllers\View_Data@List_View            | web          |
-+--------+----------+--------------------------+------+-----------------------------------------------------+--------------+
+app/
+├── Http/Controllers/
+│   ├── AuthController.php          # Login/Logout
+│   ├── DashboardController.php     # Admin dashboard
+│   ├── HotelProfileController.php  # CRUD hotel profiles + image upload
+│   ├── RoomController.php          # CRUD rooms per profile
+│   ├── SurveyController.php        # Public survey form display + submit
+│   ├── SurveyLinkController.php    # CRUD survey links
+│   ├── SurveyResponseController.php# View submitted responses
+│   ├── SurveySectionController.php # CRUD sections + drag & drop reorder
+│   ├── SurveyQuestionController.php# CRUD questions + drag & drop reorder
+│   └── UserController.php          # Manage admin users
+├── Models/
+│   ├── HotelProfile.php            # name, logo, background, titles, forms
+│   ├── Room.php                    # belongs to HotelProfile
+│   ├── SurveySection.php           # belongs to HotelProfile, has translations
+│   ├── SurveySectionTranslation.php# title per locale
+│   ├── SurveyQuestion.php          # belongs to Section, has translations
+│   ├── SurveyQuestionTranslation.php# text per locale
+│   ├── SurveyLink.php              # slug, group_name, belongs to Room
+│   ├── SurveyResponse.php          # personal info + overall rating
+│   ├── SurveyAnswer.php            # answer per question (yes/no + comment)
+│   └── User.php                    # admin users
+resources/js/
+├── Components/
+│   ├── Survey/
+│   │   ├── LanguageSwitcher.vue    # EN/TH toggle
+│   │   ├── StarRating.vue          # 5-star rating component
+│   │   ├── SurveyQuestion.vue      # Yes/No buttons + comment input
+│   │   └── SurveySection.vue       # Section card wrapper
+│   └── UI/
+│       ├── CopyButton.vue          # Copy to clipboard
+│       └── Modal.vue               # Reusable modal dialog
+├── Layouts/
+│   ├── AdminLayout.vue             # Sidebar nav + flash messages
+│   └── GuestLayout.vue             # Public layout with logo/background
+├── Pages/
+│   ├── Admin/
+│   │   ├── Dashboard.vue           # Stats overview
+│   │   ├── HotelProfiles/Index.vue # Manage profiles + image upload
+│   │   ├── Rooms/Index.vue         # Manage rooms per profile
+│   │   ├── SurveyLinks/Index.vue   # Manage survey links per profile
+│   │   ├── SurveySections/Index.vue# Manage sections & questions (drag & drop)
+│   │   ├── Users/Index.vue         # Manage admin users
+│   │   └── Responses.vue           # View responses per link
+│   ├── Auth/Login.vue              # Admin login
+│   ├── Error/NotFound.vue          # 404 page
+│   └── Survey/
+│       ├── Show.vue                # Public survey form
+│       └── Response.vue            # View submitted response
+└── Utils/
+    └── validators.js               # Vuelidate validators with EN/TH messages
 ```
-<h2>ตัวอย่างโปรแกรม</h2>
 
-<img src="https://user-images.githubusercontent.com/11131954/44297998-312d0c80-a305-11e8-8534-ebd8b549e7bb.PNG" width="23%"></img> <img src="https://user-images.githubusercontent.com/11131954/44298000-34c09380-a305-11e8-9bac-0c6cf9250cf9.PNG" width="23%"></img> <img src="https://user-images.githubusercontent.com/11131954/44298003-39854780-a305-11e8-9094-25d9f8d5a39a.PNG" width="23%"></img> <img src="https://user-images.githubusercontent.com/11131954/44616592-c045a180-a87c-11e8-864e-ddea699104cc.PNG" width="23%"></img> <img src="https://user-images.githubusercontent.com/11131954/44616595-c2a7fb80-a87c-11e8-9679-ed2642664a89.PNG" width="23%"></img> <img src="https://user-images.githubusercontent.com/11131954/44616598-c471bf00-a87c-11e8-97d6-c83a8f4619f6.PNG" width="23%"></img> <img src="https://user-images.githubusercontent.com/11131954/44616600-c63b8280-a87c-11e8-9071-49689759f009.PNG" width="23%"></img>
+## Database Schema
 
+```
+hotel_profiles
+├── rooms (hotel_profile_id)
+│   └── survey_links (room_id)
+│       └── survey_responses (survey_link_id)
+│           └── survey_answers (response_id, question_id)
+└── survey_sections (hotel_profile_id)
+    ├── survey_section_translations (section_id, locale)
+    └── survey_questions (section_id)
+        └── survey_question_translations (question_id, locale)
+```
+
+## Getting Started
+
+### Docker (recommended)
+
+```bash
+docker compose up --build -d
+```
+
+เข้าใช้งาน:
+- **Survey form:** http://localhost:8000/{locale}/{slug}
+- **Admin panel:** http://localhost:8000/admin/login
+
+Default admin: `admin` / `password`
+
+### Manual Setup
+
+```bash
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+php artisan serve &
+npm run dev
+```
+
+## Key Routes
+
+| Route | Description |
+|-------|-------------|
+| `GET /{locale}/{slug}` | Public survey form |
+| `POST /survey/submit` | Submit survey response |
+| `GET /{locale}/{slug}/{number}` | View submitted response |
+| `GET /admin/dashboard` | Admin dashboard |
+| `GET /admin/hotel-profiles` | Manage hotel profiles |
+| `GET /admin/rooms` | Manage rooms |
+| `GET /admin/survey-sections` | Manage sections & questions |
+| `GET /admin/survey-links` | Manage survey links |
+| `GET /admin/users` | Manage users |
